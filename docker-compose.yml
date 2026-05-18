@@ -3,7 +3,7 @@ version: "3.9"
 x-common-volumes: &common-volumes
   - ./reports:/reports
   - shared-data:/data
-  - /opt/tomcat/webapps/Docker_backup:/usr/local/tomcat/webapps/Docker_backup
+  - ./Docker_backup:/usr/local/tomcat/webapps/Docker_backup
 
 x-test-template: &test-template
   build: .
@@ -28,7 +28,7 @@ services:
     ports:
       - "8081:8080"
     volumes:
-      - /opt/tomcat/webapps/Docker_backup:/usr/local/tomcat/webapps/Docker_backup
+      - ./Docker_backup:/usr/local/tomcat/webapps/Docker_backup
       - shared-data:/data
     environment:
       - TZ=Asia/Kolkata

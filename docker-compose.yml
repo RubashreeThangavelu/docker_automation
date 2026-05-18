@@ -12,13 +12,23 @@ x-test-template: &test-template
     - selenium-grid
   volumes: *common-volumes
   command: >
-    sh -c "
-    /init-data.sh &&
-    mvn test &&
-    mkdir -p /reports/firefox &&
-    cp -r target/surefire-reports/* /reports/firefox/ &&
-    exec sleep infinity
-    "
+     sh -c "
+     set -e &&
+     /init-data.sh &&
+
+     echo 'Cleaning old reports...' &&
+     rm -rf /reports/firefox/* &&
+     rm -rf target &&
+
+     echo 'Running Maven tests...' &&
+     mvn clean test &&
+
+     echo 'Copying reports...' &&
+     mkdir -p /reports/firefox &&
+     cp -r target/surefire-reports/* /reports/firefox/ &&
+
+     echo 'Reports copied successfully' &&
+     exec sleep infinity"
 
 services:
 

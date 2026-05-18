@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>21/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon May 18 13:06:22 IST 2026</td>
+<td>Started on:</td><td>Mon May 18 15:41:24 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>424 seconds (424237 ms)</td>
+<tr><td>Total time:</td><td>426 seconds (426925 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,16 +76,9 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyHandlingFailedBackups()'><b>verifyHandlingFailedBackups</b><br>Test class: com.selenium.tests.BackupStatusTest<br/>
-<a href="#Output-1468449910" onClick='toggleBox("Output-1468449910", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1468449910" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1468449910">
-Backup Status: Scheduled | Last File: N/A | Last Run: 2026-05-18 13:09:00<br/>
-</div>
-</td>
-<td><div><pre>java.lang.AssertionError: Backup status should be &apos;Failed&apos; expected [true] but found [false]
-	at com.selenium.tests.BackupStatusTest.verifyHandlingFailedBackups(BackupStatusTest.java:1032)
+<td title='com.selenium.tests.BackupStatusTest.verifyCountdownTimerDecreasesSmoothly()'><b>verifyCountdownTimerDecreasesSmoothly</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td><div><pre>java.lang.AssertionError: Countdown timer did not decrease smoothly. Expected ~5 seconds decrease, but was: 3 expected [true] but found [false]
+	at com.selenium.tests.BackupStatusTest.verifyCountdownTimerDecreasesSmoothly(BackupStatusTest.java:505)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:91)
 	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1212)
@@ -114,12 +107,12 @@ Backup Status: Scheduled | Last File: N/A | Last Run: 2026-05-18 13:09:00<br/>
 	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
-... Removed 35 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1468449910", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1468449910'><pre>java.lang.AssertionError: Backup status should be &apos;Failed&apos; expected [true] but found [false]
+... Removed 35 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace633846010", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace633846010'><pre>java.lang.AssertionError: Countdown timer did not decrease smoothly. Expected ~5 seconds decrease, but was: 3 expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertTrue(Assert.java:57)
-	at com.selenium.tests.BackupStatusTest.verifyHandlingFailedBackups(BackupStatusTest.java:1032)
+	at com.selenium.tests.BackupStatusTest.verifyCountdownTimerDecreasesSmoothly(BackupStatusTest.java:505)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -181,7 +174,7 @@ Backup Status: Scheduled | Last File: N/A | Last Run: 2026-05-18 13:09:00<br/>
 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
 </pre></div></td>
-<td>60</td>
+<td>5</td>
 <td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -193,52 +186,7 @@ Backup Status: Scheduled | Last File: N/A | Last Run: 2026-05-18 13:09:00<br/>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyNoSensitiveDataLeakage()'><b>verifyNoSensitiveDataLeakage</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
-<td></td>
-<td>44</td>
-<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
-<tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyBackupStatusFlow()'><b>verifyBackupStatusFlow</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
-<td></td>
-<td>0</td>
-<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
-<tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyResponsiveLayout()'><b>verifyResponsiveLayout</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
-<td></td>
-<td>3</td>
-<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
-<tr>
 <td title='com.selenium.tests.BackupStatusTest.verifyAllElementsPresent()'><b>verifyAllElementsPresent</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
-<td></td>
-<td>0</td>
-<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
-<tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyCountdownTimerDecreasesSmoothly()'><b>verifyCountdownTimerDecreasesSmoothly</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
-<td></td>
-<td>5</td>
-<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
-<tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyScheduledTimeCorrectlyDisplayed()'><b>verifyScheduledTimeCorrectlyDisplayed</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
-<td></td>
-<td>2</td>
-<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
-<tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyLastFileNameValidation()'><b>verifyLastFileNameValidation</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
-<td></td>
-<td>0</td>
-<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
-<tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyBackupPageTitle()'><b>verifyBackupPageTitle</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
-<td></td>
-<td>0</td>
-<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
-<tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyHeadingAndLabelsStyling()'><b>verifyHeadingAndLabelsStyling</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
-<td></td>
-<td>0</td>
-<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
-<tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyCountdownTimerStyling()'><b>verifyCountdownTimerStyling</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
 <td></td>
 <td>0</td>
 <td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
@@ -248,24 +196,29 @@ Backup Status: Scheduled | Last File: N/A | Last Run: 2026-05-18 13:09:00<br/>
 <td>64</td>
 <td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
 <tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyLongFileNameWrapsInsideCorrectly()'><b>verifyLongFileNameWrapsInsideCorrectly</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
-<td></td>
-<td>70</td>
-<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
-<tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyCountdownTimerisAccurate()'><b>verifyCountdownTimerisAccurate</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
-<td></td>
-<td>5</td>
-<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
-<tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyCountdownReachesZeroAndNextRunUpdates()'><b>verifyCountdownReachesZeroAndNextRunUpdates</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td title='com.selenium.tests.BackupStatusTest.verifyBackupStatusFlow()'><b>verifyBackupStatusFlow</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
 <td></td>
 <td>0</td>
 <td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
 <tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyCountdownDoesNotShowNegativeValue()'><b>verifyCountdownDoesNotShowNegativeValue</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td title='com.selenium.tests.BackupStatusTest.verifyScheduledTimeCorrectlyDisplayed()'><b>verifyScheduledTimeCorrectlyDisplayed</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
 <td></td>
-<td>20</td>
+<td>2</td>
+<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
+<tr>
+<td title='com.selenium.tests.BackupStatusTest.verifyNoSensitiveDataLeakage()'><b>verifyNoSensitiveDataLeakage</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td></td>
+<td>44</td>
+<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
+<tr>
+<td title='com.selenium.tests.BackupStatusTest.verifyBackupStatusPageAutoRefreshesEvery15Seconds()'><b>verifyBackupStatusPageAutoRefreshesEvery15Seconds</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td></td>
+<td>17</td>
+<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
+<tr>
+<td title='com.selenium.tests.BackupStatusTest.verifyHeadingAndLabelsStyling()'><b>verifyHeadingAndLabelsStyling</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td></td>
+<td>0</td>
 <td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
 <tr>
 <td title='com.selenium.tests.BackupStatusTest.verifyScheduledTimeMatchesConfiguredTime()'><b>verifyScheduledTimeMatchesConfiguredTime</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
@@ -273,9 +226,19 @@ Backup Status: Scheduled | Last File: N/A | Last Run: 2026-05-18 13:09:00<br/>
 <td>0</td>
 <td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
 <tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyTimeFormatvalidation()'><b>verifyTimeFormatvalidation</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td title='com.selenium.tests.BackupStatusTest.verifyLastFileMatchesBackup()'><b>verifyLastFileMatchesBackup</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td></td>
+<td>45</td>
+<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
+<tr>
+<td title='com.selenium.tests.BackupStatusTest.verifyLastFileNameValidation()'><b>verifyLastFileNameValidation</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
 <td></td>
 <td>0</td>
+<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
+<tr>
+<td title='com.selenium.tests.BackupStatusTest.verifyCountdownTimerisAccurate()'><b>verifyCountdownTimerisAccurate</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td></td>
+<td>5</td>
 <td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
 <tr>
 <td title='com.selenium.tests.BackupStatusTest.verifyNextScheduledRunCalculatedCorrectly()'><b>verifyNextScheduledRunCalculatedCorrectly</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
@@ -283,19 +246,56 @@ Backup Status: Scheduled | Last File: N/A | Last Run: 2026-05-18 13:09:00<br/>
 <td>0</td>
 <td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
 <tr>
+<td title='com.selenium.tests.BackupStatusTest.verifyResponsiveLayout()'><b>verifyResponsiveLayout</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td></td>
+<td>4</td>
+<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
+<tr>
+<td title='com.selenium.tests.BackupStatusTest.verifyCountdownDoesNotShowNegativeValue()'><b>verifyCountdownDoesNotShowNegativeValue</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td></td>
+<td>20</td>
+<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
+<tr>
+<td title='com.selenium.tests.BackupStatusTest.verifyCountdownTimerStyling()'><b>verifyCountdownTimerStyling</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td></td>
+<td>0</td>
+<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
+<tr>
+<td title='com.selenium.tests.BackupStatusTest.verifyBackupPageTitle()'><b>verifyBackupPageTitle</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td></td>
+<td>0</td>
+<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
+<tr>
+<td title='com.selenium.tests.BackupStatusTest.verifyHandlingFailedBackups()'><b>verifyHandlingFailedBackups</b><br>Test class: com.selenium.tests.BackupStatusTest<br/>
+<a href="#Output-948068730" onClick='toggleBox("Output-948068730", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-948068730" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-948068730">
+Backup Status: Failed | Last File: N/A | Last Run: 2026-05-18 15:44:00<br/>
+</div>
+</td>
+<td></td>
+<td>55</td>
+<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
+<tr>
+<td title='com.selenium.tests.BackupStatusTest.verifyTimeFormatvalidation()'><b>verifyTimeFormatvalidation</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td></td>
+<td>0</td>
+<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
+<tr>
+<td title='com.selenium.tests.BackupStatusTest.verifyCountdownReachesZeroAndNextRunUpdates()'><b>verifyCountdownReachesZeroAndNextRunUpdates</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td></td>
+<td>0</td>
+<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
+<tr>
+<td title='com.selenium.tests.BackupStatusTest.verifyLongFileNameWrapsInsideCorrectly()'><b>verifyLongFileNameWrapsInsideCorrectly</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
+<td></td>
+<td>70</td>
+<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
+<tr>
 <td title='com.selenium.tests.BackupStatusTest.verifyCountdownDoesNotFreezeOrSkip()'><b>verifyCountdownDoesNotFreezeOrSkip</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
 <td></td>
-<td>32</td>
-<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
-<tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyLastFileMatchesBackup()'><b>verifyLastFileMatchesBackup</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
-<td></td>
-<td>50</td>
-<td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
-<tr>
-<td title='com.selenium.tests.BackupStatusTest.verifyBackupStatusPageAutoRefreshesEvery15Seconds()'><b>verifyBackupStatusPageAutoRefreshesEvery15Seconds</b><br>Test class: com.selenium.tests.BackupStatusTest</td>
-<td></td>
-<td>17</td>
+<td>33</td>
 <td>com.selenium.tests.BackupStatusTest@5fc3333f</td></tr>
 </table><p>
 </body>

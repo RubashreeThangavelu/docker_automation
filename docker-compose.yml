@@ -15,8 +15,8 @@ x-test-template: &test-template
     sh -c "
     /init-data.sh &&
     mvn test &&
-    mkdir -p /reports/${BROWSER} &&
-    cp -r target/surefire-reports/* /reports/${BROWSER}/ &&
+    mkdir -p /reports/firefox &&
+    cp -r target/surefire-reports/* /reports/firefox/ &&
     exec sleep infinity
     "
 

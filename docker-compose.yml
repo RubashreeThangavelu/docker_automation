@@ -1,0 +1,81 @@
+version: "3.9"
+
+
+x-common-volumes: &common-volumes
+  - ./reports:/reports
+  - shared-data:/data
+  - /opt/tomcat/webapps/Docker_backup:/usr/local/tomcat/webapps/Docker_backup
+
+x-test-template: &test-template
+  build: .
+  working_dir: /app
+  networks:
+    - selenium-grid
+  volumes: *common-volumes
+  command: >
+    sh -c "
+    /init-data.sh &&
+    mvn test &&
+    mkdir -p /reports/${BROWSER} &&
+    cp -r target/surefire-reports/* /reports/${BROWSER}/ &&
+    exec sleep infinity
+    "
+
+services:
+
+  app:
+    image: tomcat:10.1
+    container_name: tomcat-app
+    ports:
+      - "8081:8080"
+    volumes:
+      - /opt/tomcat/webapps/Docker_backup:/usr/local/tomcat/webapps/Docker_backup
+      - shared-data:/data
+    environment:
+      - TZ=Asia/Kolkata
+    networks:
+      - selenium-grid
+
+  firefox:
+    image: selenium/standalone-firefox:4.18.1
+    container_name: firefox
+    shm_size: 2gb
+    ports:
+      - "4444:4444"
+    networks:
+      - selenium-grid
+
+  chrome:
+    image: selenium/standalone-chrome:4.18.1
+    container_name: chrome
+    shm_size: 2gb
+    ports:
+      - "4445:4444"
+    networks:
+      - selenium-grid
+
+  selenium-tests-firefox:
+    <<: *test-template
+    container_name: selenium-tests-firefox
+    depends_on:
+      - firefox
+      - app
+    environment:
+      BROWSER: firefox
+      SELENIUM_URL: http://firefox:4444/wd/hub
+
+  selenium-tests-chrome:
+    <<: *test-template
+    container_name: selenium-tests-chrome
+    depends_on:
+      - chrome
+      - app
+    environment:
+      BROWSER: chrome
+      SELENIUM_URL: http://chrome:4444/wd/hub
+
+volumes:
+  shared-data:
+
+networks:
+  selenium-grid:

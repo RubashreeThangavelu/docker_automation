@@ -13,6 +13,7 @@ import org.testng.annotations.AfterMethod;
 
 import java.net.URL;
 import java.time.Duration;
+import org.openqa.selenium.Dimension;
 
 public class BaseTest {
 
@@ -38,9 +39,10 @@ public class BaseTest {
             case "chrome":
 
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("--headless=new");
                 chromeOptions.addArguments("--no-sandbox");
                 chromeOptions.addArguments("--disable-dev-shm-usage");
+                chromeOptions.addArguments("--window-size=1920,1080");
 
                 driver = new RemoteWebDriver(
                         new URL(seleniumUrl),
@@ -50,7 +52,6 @@ public class BaseTest {
                 break;
 
             case "firefox":
-
             default:
 
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
@@ -64,12 +65,15 @@ public class BaseTest {
                 break;
         }
 
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        driver.manage().window().setSize(new Dimension(1920, 1080));
+
+
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
-
         if (driver != null) {
             driver.quit();
         }

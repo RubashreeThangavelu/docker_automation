@@ -19,7 +19,7 @@
                 </methods>
             </class>
         </classes>
-    </test>
+    </test-->
      <test name="Dashboard">
              <parameter name="newBrowser" value="true"/>
       <classes>
@@ -28,7 +28,7 @@
                     <exclude name="verifyWelcomePageWhenNoBackupsExist"/>
                 </methods>
         </classes>
-    </test--> 
+    </test> 
     <test name="Login">
             <parameter name="newBrowser" value="true"/>
         <classes>

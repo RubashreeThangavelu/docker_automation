@@ -9,7 +9,7 @@
                 </methods>
             </class>
         </classes>
-    </test>
+    </test-->
     <test name="IsolatedBackupStatus2">
         <parameter name="newBrowser" value="true"/>
         <classes>
@@ -19,7 +19,7 @@
                 </methods>
             </class>
         </classes>
-    </test-->
+    </test>
      <test name="Dashboard">
              <parameter name="newBrowser" value="true"/>
       <classes>

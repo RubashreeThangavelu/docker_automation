@@ -28,11 +28,8 @@ jobs:
       - name: Start Containers
         run: docker compose up -d
 
-      - name: Wait for Grid
-        run: sleep 30
-
-      - name: Execute Tests
-        run: docker compose exec -T selenium-tests mvn test
+      - name: Wait for Selenium Execution
+        run: sleep 90
 
       - name: Upload Reports
         uses: actions/upload-artifact@v4

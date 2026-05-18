@@ -1,16 +1,20 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "/usr/local/bin:/usr/bin:/bin:/usr/libexec/docker/cli-plugins:$PATH"
+    }
+
     stages {
 
-        stage('Checkout') {
+        stage('Check Docker') {
             steps {
-                git branch: 'main',
-                url: 'https://github.com/RubashreeThangavelu/docker_automation.git'
+                sh 'docker --version'
+                sh 'docker compose version'
             }
         }
 
-        stage('Build Containers') {
+        stage('Build') {
             steps {
                 sh 'docker compose build'
             }
@@ -25,9 +29,7 @@ pipeline {
 
     post {
         always {
-            junit '**/surefire-reports/*.xml'
-            archiveArtifacts artifacts: 'reports/**/*', allowEmptyArchive: true
-            sh 'docker compose down -v'
+            sh 'docker compose down -v || true'
         }
     }
 }

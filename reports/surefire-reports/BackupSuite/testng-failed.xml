@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [BackupSuite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="IsolatedBackupStatus2(failed)" verbose="0">
+    <parameter name="newBrowser" value="true"/>
+    <classes>
+      <class name="com.selenium.tests.DashboardTest">
+        <methods>
+          <include name="verifyWelcomePageWhenNoBackupsExist"/>
+          <include name="tearDown"/>
+          <include name="goToDashboard"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.selenium.tests.DashboardTest -->
+    </classes>
+  </test> <!-- IsolatedBackupStatus2(failed) -->
+  <test thread-count="5" name="Signup(failed)" verbose="0">
+    <parameter name="newBrowser" value="true"/>
+    <classes>
+      <class name="com.selenium.tests.SignupTest">
+        <methods>
+          <include name="verifyKeyboardNavigationSignup"/>
+          <include name="signupWithValidCredentials"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.selenium.tests.SignupTest -->
+    </classes>
+  </test> <!-- Signup(failed) -->
+  <test thread-count="5" name="BackupStatus(failed)" verbose="0">
+    <parameter name="newBrowser" value="true"/>
+    <classes>
+      <class name="com.selenium.tests.BackupStatusTest">
+        <methods>
+          <include name="verifyHandlingFailedBackups"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.selenium.tests.BackupStatusTest -->
+    </classes>
+  </test> <!-- BackupStatus(failed) -->
+</suite> <!-- Failed suite [BackupSuite] -->

@@ -1,0 +1,1054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="1409.207" tests="136" errors="0" skipped="0" failures="4">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.7.0.jar"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Asia/Kolkata"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/opt/java/openjdk/lib"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="surefire.test.class.path" value="/app/target/test-classes:/app/target/classes:/root/.m2/repository/org/seleniumhq/selenium/selenium-java/4.18.1/selenium-java-4.18.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-api/4.18.1/selenium-api-4.18.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.18.1/selenium-chrome-driver-4.18.1.jar:/root/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.18.1/selenium-chromium-driver-4.18.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-json/4.18.1/selenium-json-4.18.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.18.1/selenium-manager-4.18.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v120/4.18.1/selenium-devtools-v120-4.18.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v121/4.18.1/selenium-devtools-v121-4.18.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v122/4.18.1/selenium-devtools-v122-4.18.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v85/4.18.1/selenium-devtools-v85-4.18.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.18.1/selenium-edge-driver-4.18.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.18.1/selenium-firefox-driver-4.18.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-http/4.18.1/selenium-http-4.18.1.jar:/root/.m2/repository/dev/failsafe/failsafe/3.3.2/failsafe-3.3.2.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.18.1/selenium-ie-driver-4.18.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.18.1/selenium-remote-driver-4.18.1.jar:/root/.m2/repository/com/google/guava/guava/33.0.0-jre/guava-33.0.0-jre.jar:/root/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/root/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/root/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/root/.m2/repository/org/checkerframework/checker-qual/3.41.0/checker-qual-3.41.0.jar:/root/.m2/repository/com/google/errorprone/error_prone_annotations/2.23.0/error_prone_annotations-2.23.0.jar:/root/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/root/.m2/repository/io/opentelemetry/semconv/opentelemetry-semconv/1.23.1-alpha/opentelemetry-semconv-1.23.1-alpha.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-api/1.35.0/opentelemetry-api-1.35.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-context/1.35.0/opentelemetry-context-1.35.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.35.0/opentelemetry-exporter-logging-1.35.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.35.0/opentelemetry-sdk-common-1.35.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.35.0/opentelemetry-sdk-extension-autoconfigure-spi-1.35.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.35.0/opentelemetry-sdk-extension-autoconfigure-1.35.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-api-events/1.35.0-alpha/opentelemetry-api-events-1.35.0-alpha.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.35.0/opentelemetry-sdk-trace-1.35.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-extension-incubator/1.35.0-alpha/opentelemetry-extension-incubator-1.35.0-alpha.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.35.0/opentelemetry-sdk-1.35.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.35.0/opentelemetry-sdk-metrics-1.35.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.35.0/opentelemetry-sdk-logs-1.35.0.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.14.12/byte-buddy-1.14.12.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-os/4.18.1/selenium-os-4.18.1.jar:/root/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.18.1/selenium-safari-driver-4.18.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-support/4.18.1/selenium-support-4.18.1.jar:/root/.m2/repository/org/testng/testng/7.9.0/testng-7.9.0.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/root/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/root/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/root/.m2/repository/jakarta/servlet/jakarta.servlet-api/5.0.0/jakarta.servlet-api-5.0.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-04-16"/>
+    <property name="java.home" value="/opt/java/openjdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/app"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.3+9-LTS"/>
+    <property name="user.name" value="root"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="otel.metrics.exporter" value="none"/>
+    <property name="os.version" value="6.17.0-23-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="otel.traces.exporter" value="none"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-21.0.3+9"/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="otel.logs.exporter" value="none"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.3"/>
+    <property name="user.dir" value="/app"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="maven.multiModuleProjectDirectory" value="/app"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="21.0.3+9-LTS"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="verifyStatusWhenNoBackupHasRun" classname="com.selenium.tests.BackupStatusTest" time="0.111">
+    <system-out><![CDATA[Last File = None
+Last Run = None
+Status = Scheduled
+ Passed — System handles no backup history correctly
+]]></system-out>
+    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+May 18, 2026 12:49:58 PM org.openqa.selenium.remote.tracing.opentelemetry.OpenTelemetryTracer createTracer
+INFO: Using OpenTelemetry for tracing
+]]></system-err>
+  </testcase>
+  <testcase name="verifyAllElementsPresent" classname="com.selenium.tests.BackupStatusTest" time="0.08"/>
+  <testcase name="verifyBackupPageTitle" classname="com.selenium.tests.BackupStatusTest" time="0.003"/>
+  <testcase name="verifyBackupStatusFlow" classname="com.selenium.tests.BackupStatusTest" time="0.05">
+    <system-out><![CDATA[Page background color:#000000
+Card backgroound color: #ffffff
+Card border-radius: 12px
+Card box-shadow:rgba(0, 0, 0, 0.1) 0px 0px 15px 0px
+Card padding:25px 35px
+]]></system-out>
+  </testcase>
+  <testcase name="verifyBackupStatusPageAutoRefreshesEvery15Seconds" classname="com.selenium.tests.BackupStatusTest" time="17.052"/>
+  <testcase name="verifyCountdownDoesNotFreezeOrSkip" classname="com.selenium.tests.BackupStatusTest" time="32.582">
+    <system-out><![CDATA[Raw countdown text: [00h 00m 06s]
+Parsed countdown: 6 seconds
+Raw countdown text: [00h 00m 06s]
+Parsed countdown: 6 seconds
+Raw countdown text: [00h 00m 05s]
+Parsed countdown: 5 seconds
+Raw countdown text: [00h 00m 05s]
+Parsed countdown: 5 seconds
+Raw countdown text: [00h 00m 04s]
+Parsed countdown: 4 seconds
+Raw countdown text: [00h 00m 04s]
+Parsed countdown: 4 seconds
+Raw countdown text: [00h 00m 03s]
+Parsed countdown: 3 seconds
+Raw countdown text: [00h 00m 03s]
+Parsed countdown: 3 seconds
+Raw countdown text: [00h 00m 02s]
+Parsed countdown: 2 seconds
+Raw countdown text: [00h 00m 02s]
+Parsed countdown: 2 seconds
+Raw countdown text: [00h 00m 01s]
+Parsed countdown: 1 seconds
+Raw countdown text: [00h 00m 01s]
+Parsed countdown: 1 seconds
+Raw countdown text: [00h 00m 00s]
+Parsed countdown: 0 seconds
+Raw countdown text: [00h 00m 00s]
+Parsed countdown: 0 seconds
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Raw countdown text: [Running now...]
+Observed values: [6, 5, 4, 3, 2, 1, 0]
+Skipped reads: 46
+]]></system-out>
+  </testcase>
+  <testcase name="verifyCountdownDoesNotShowNegativeValue" classname="com.selenium.tests.BackupStatusTest" time="20.37">
+    <system-out><![CDATA[Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+Countdown value: Running now...
+]]></system-out>
+  </testcase>
+  <testcase name="verifyCountdownReachesZeroAndNextRunUpdates" classname="com.selenium.tests.BackupStatusTest" time="0.738">
+    <system-out><![CDATA[Page Status: Status: Scheduled
+ Test Passed
+]]></system-out>
+  </testcase>
+  <testcase name="verifyCountdownTimerDecreasesSmoothly" classname="com.selenium.tests.BackupStatusTest" time="5.04"/>
+  <testcase name="verifyCountdownTimerStyling" classname="com.selenium.tests.BackupStatusTest" time="0.054">
+    <system-out><![CDATA[Countdown font size: 22.4px
+Countdown color (hex): #c62828
+Countdown text: 00h 00m 02s
+]]></system-out>
+  </testcase>
+  <testcase name="verifyCountdownTimerisAccurate" classname="com.selenium.tests.BackupStatusTest" time="5.062">
+    <system-out><![CDATA[Raw Next Run Text = Next Scheduled Run: 2026-05-19 13:08:00
+Clean Next Run Text = 2026-05-19 13:08:00
+Countdown UI = 23h 59m 59s
+]]></system-out>
+  </testcase>
+  <testcase name="verifyHandlingFailedBackups" classname="com.selenium.tests.BackupStatusTest" time="60.333">
+    <failure message="Backup status should be &apos;Failed&apos; expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Backup status should be 'Failed' expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.selenium.tests.BackupStatusTest.verifyHandlingFailedBackups(BackupStatusTest.java:1032)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:137)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:148)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:88)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:91)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1212)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:1090)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:910)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:906)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:283)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:206)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+]]></failure>
+    <system-out><![CDATA[Current Status: 
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Backup Status: Scheduled | Last File: N/A | Last Run: 2026-05-18 13:09:00
+Backup Status: Scheduled | Last File: N/A | Last Run: 2026-05-18 13:09:00
+]]></system-out>
+  </testcase>
+  <testcase name="verifyHeadingAndLabelsStyling" classname="com.selenium.tests.BackupStatusTest" time="0.225">
+    <system-out><![CDATA[Heading font size: 24px
+Label 'Scheduled Time:' - Font: 700, Size: 16px, Color: rgb(0, 0, 0)
+Label 'Last File:' - Font: 700, Size: 16px, Color: rgb(0, 0, 0)
+Label 'Last Run:' - Font: 700, Size: 16px, Color: rgb(0, 0, 0)
+Label 'Status:' - Font: 700, Size: 16px, Color: rgb(0, 0, 0)
+Label 'Next Scheduled Run:' - Font: 700, Size: 16px, Color: rgb(0, 0, 0)
+Value 'Failed' - Font: 700, Size: 16px, Color: rgb(255, 0, 0)
+Value '2026-05-19 13:09:00' - Font: 400, Size: 16px, Color: rgb(0, 0, 0)
+UI styling verified for headings, labels, and values.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyLastFileMatchesBackup" classname="com.selenium.tests.BackupStatusTest" time="50.132"/>
+  <testcase name="verifyLastFileNameValidation" classname="com.selenium.tests.BackupStatusTest" time="0.034">
+    <system-out><![CDATA[UI Last File value = Last Run: 2026-05-18 13:10:00
+]]></system-out>
+  </testcase>
+  <testcase name="verifyLongFileNameWrapsInsideCorrectly" classname="com.selenium.tests.BackupStatusTest" time="70.718">
+    <system-out><![CDATA[UI Shows: Last File: This_is_a_very_very_long_backup_filename_with_special_chars_@_#_$_%_and_more_______________________________final_test_file.txt
+overflow     = visible
+white-space  = normal
+overflowWrap = normal
+wordWrap     = normal
+Long filename displayed correctly and wraps inside UI
+]]></system-out>
+  </testcase>
+  <testcase name="verifyNextScheduledRunCalculatedCorrectly" classname="com.selenium.tests.BackupStatusTest" time="0.685">
+    <system-out><![CDATA[UI Raw: Next Scheduled Run: 2026-05-18 13:12:59
+UI Next Run: 2026-05-18 13:12:59
+Time Difference: 1 sec
+Next Scheduled Run verified successfully!
+]]></system-out>
+  </testcase>
+  <testcase name="verifyNoSensitiveDataLeakage" classname="com.selenium.tests.BackupStatusTest" time="44.386">
+    <system-out><![CDATA[Current Status: 
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Scheduled
+Current Status: Success
+Last File Shown: Last File: file2.txt
+Security Validation Passed – No sensitive data leakage detected.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyPageRefreshPerformance" classname="com.selenium.tests.BackupStatusTest" time="64.243">
+    <system-out><![CDATA[Initial Countdown:23h 59m 52s
+Initial Status: Success
+Cycle 1 - Countdown: 23h 59m 36s
+Cycle 1 - Status: Success
+Cycle 2 - Countdown: 23h 59m 20s
+Cycle 2 - Status: Success
+Cycle 3 - Countdown: 23h 59m 04s
+Cycle 3 - Status: Success
+Cycle 4 - Countdown: 23h 58m 48s
+Cycle 4 - Status: Success
+Page refreshed smoothly without any flicker or data loss
+]]></system-out>
+  </testcase>
+  <testcase name="verifyResponsiveLayout" classname="com.selenium.tests.BackupStatusTest" time="3.958">
+    <system-out><![CDATA[Checking UI in DesktopView:1366x768
+UI adjusts properly in Desktop, Tablet, Mobile view
+Checking UI in TabletView:768x1024
+UI adjusts properly in Desktop, Tablet, Mobile view
+Checking UI in MobileView:375x812
+UI adjusts properly in Desktop, Tablet, Mobile view
+]]></system-out>
+  </testcase>
+  <testcase name="verifyScheduledTimeCorrectlyDisplayed" classname="com.selenium.tests.BackupStatusTest" time="2.477">
+    <system-out><![CDATA[UI Last Run Timestamp = 2026-05-18 13:12:00
+BACKUP_HISTORY_FILE = [/usr/local/tomcat/webapps/Docker_backup/backup_history.txt]
+Absolute Path = /usr/local/tomcat/webapps/Docker_backup/backup_history.txt
+File Exists = true
+File Readable = true
+File Timestamp = 2026-05-18 13:12:00
+SUCCESS: UI timestamp matches backup history file.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyScheduledTimeMatchesConfiguredTime" classname="com.selenium.tests.BackupStatusTest" time="0.697">
+    <system-out><![CDATA[Configured Time = 16:44
+Displayed Time  = 16:44
+ Scheduled Time matches correctly!
+]]></system-out>
+  </testcase>
+  <testcase name="verifyTimeFormatvalidation" classname="com.selenium.tests.BackupStatusTest" time="0.563">
+    <system-out><![CDATA[Scheduled Time:16:44
+Last Run:2026-05-18 13:13:21
+Next Scheduled Run:2026-05-18 16:43:59
+All time fields are valid
+]]></system-out>
+  </testcase>
+  <testcase name="verifyWelcomePageWhenNoBackupsExist" classname="com.selenium.tests.DashboardTest" time="0.087">
+    <failure message="Expected Total Backups = 0 / N/A / Empty but found: 34 expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected Total Backups = 0 / N/A / Empty but found: 34 expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.selenium.tests.DashboardTest.verifyWelcomePageWhenNoBackupsExist(DashboardTest.java:430)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:137)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:148)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:88)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:91)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1212)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:1090)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:910)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:906)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:283)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:206)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+]]></failure>
+    <system-out><![CDATA[Last Backup: None
+Total Backups: 34
+Files Last Backup: 1
+Status: Scheduled
+]]></system-out>
+  </testcase>
+  <testcase name="verifyAllTextVisible" classname="com.selenium.tests.DashboardTest" time="0.054"/>
+  <testcase name="verifyAutoRefresh" classname="com.selenium.tests.DashboardTest" time="16.049"/>
+  <testcase name="verifyBackupStatsVisible" classname="com.selenium.tests.DashboardTest" time="0.136"/>
+  <testcase name="verifyBackupSummaryConsistency" classname="com.selenium.tests.DashboardTest" time="0.178">
+    <system-out><![CDATA[Dashboard - Last File: 1
+Dashboard - Last Run: None
+Dashboard - Status: Scheduled
+Dashboard - Next Run: 34
+Backup Status - Last File: None
+Backup Status - Last Run: None
+Backup Status - Status: Scheduled
+Backup Status - Next Run: 2026-05-18 18:44:59
+Backup summary is consistent between Dashboard and Backup Status page.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyBackupTimeReflectsSystemClock" classname="com.selenium.tests.DashboardTest" time="5.909">
+    <system-out><![CDATA[Backup Status Check 1: 
+Backup Status Check 2: Success
+Dashboard Values:
+Last Backup Time = 2026-05-18 12:50:35
+Total Backups = 35
+Files Last Backup = 1
+Status = Success
+FUN-07 Validation Passed – Dashboard updated correctly!
+]]></system-out>
+  </testcase>
+  <testcase name="verifyDashboardAfterRefresh" classname="com.selenium.tests.DashboardTest" time="0.064"/>
+  <testcase name="verifyDashboardHandlesLargeBackupCount" classname="com.selenium.tests.DashboardTest" time="0.065">
+    <system-out><![CDATA[Total Backups displayed: 35
+X position of Total Backups element: 647
+]]></system-out>
+  </testcase>
+  <testcase name="verifyDashboardNavigation" classname="com.selenium.tests.DashboardTest" time="0.043"/>
+  <testcase name="verifyFailedBackupStatus" classname="com.selenium.tests.DashboardTest" time="0.033"/>
+  <testcase name="verifyFontStyles" classname="com.selenium.tests.DashboardTest" time="0.019"/>
+  <testcase name="verifyGoToLoginButton" classname="com.selenium.tests.DashboardTest" time="0.174">
+    <system-out><![CDATA[Navigation to login page verified.
+Login page elements verified and login button is clickable.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyGoToLoginButtonEffect" classname="com.selenium.tests.DashboardTest" time="0.186">
+    <system-out><![CDATA[Button hover color: rgb(25, 118, 210)
+]]></system-out>
+  </testcase>
+  <testcase name="verifyNoOverlappingElements" classname="com.selenium.tests.DashboardTest" time="0.142">
+    <system-out><![CDATA[No overlapping elements detected on the welcome page.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyPageBackgroundColor" classname="com.selenium.tests.DashboardTest" time="0.022"/>
+  <testcase name="verifyPageHeading" classname="com.selenium.tests.DashboardTest" time="0.034"/>
+  <testcase name="verifyPageLoadSpeed" classname="com.selenium.tests.DashboardTest" time="0.04">
+    <system-out><![CDATA[Page load time: 39 ms
+]]></system-out>
+  </testcase>
+  <testcase name="verifyPageTitle" classname="com.selenium.tests.DashboardTest" time="0.005"/>
+  <testcase name="verifyScreenReaderCompatibility" classname="com.selenium.tests.DashboardTest" time="0.152">
+    <system-out><![CDATA[Screen reader compatible elements verified: numbers and headings display correctly.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyStatsAlignment" classname="com.selenium.tests.DashboardTest" time="0.141">
+    <system-out><![CDATA[Last Backup Time: 2026-05-18 12:50:35 X position: 397
+Total Backups Completed: 35 X position: 397
+Files in Last Backup: 1 X position: 397
+Status: Success X position: 397
+All statistics are aligned correctly.
+]]></system-out>
+  </testcase>
+  <testcase name="clickSignUpLinkTest" classname="com.selenium.tests.LoginTest" time="0.126"/>
+  <testcase name="loginWithEmptyFields" classname="com.selenium.tests.LoginTest" time="0.262"/>
+  <testcase name="loginWithInvalidPassword" classname="com.selenium.tests.LoginTest" time="0.318"/>
+  <testcase name="loginWithInvalidUsername" classname="com.selenium.tests.LoginTest" time="0.106"/>
+  <testcase name="loginWithPasswordEmpty" classname="com.selenium.tests.LoginTest" time="0.293"/>
+  <testcase name="loginWithSQLInjection" classname="com.selenium.tests.LoginTest" time="0.104"/>
+  <testcase name="loginWithUsernameContainingSpaces" classname="com.selenium.tests.LoginTest" time="0.093"/>
+  <testcase name="loginWithUsernameEmpty" classname="com.selenium.tests.LoginTest" time="0.27"/>
+  <testcase name="loginWithValidCredentials" classname="com.selenium.tests.LoginTest" time="0.761"/>
+  <testcase name="loginWithWhitespacePassword" classname="com.selenium.tests.LoginTest" time="0.044"/>
+  <testcase name="switchToNewTabOrSameTab" classname="com.selenium.tests.LoginTest" time="0.101">
+    <system-out><![CDATA[Opened in the same tab.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyAllElementsPresent" classname="com.selenium.tests.LoginTest" time="0.073"/>
+  <testcase name="verifyAutofillBehavior" classname="com.selenium.tests.LoginTest" time="0.041">
+    <system-out><![CDATA[Username autocomplete attribute: 
+Login fields are ready for autofill/manual input.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyButtonAndLinkVisibility" classname="com.selenium.tests.LoginTest" time="0.047"/>
+  <testcase name="verifyKeyboardNavigationLogin" classname="com.selenium.tests.LoginTest" time="0.645"/>
+  <testcase name="verifyLabelsVisible" classname="com.selenium.tests.LoginTest" time="0.024"/>
+  <testcase name="verifyLoginAfterBackendReset" classname="com.selenium.tests.LoginTest" time="0.149"/>
+  <testcase name="verifyLoginAfterPasswordChange" classname="com.selenium.tests.LoginTest" time="0.76"/>
+  <testcase name="verifyLoginPageTitle" classname="com.selenium.tests.LoginTest" time="0.004"/>
+  <testcase name="verifyLoginWithMaxChars" classname="com.selenium.tests.LoginTest" time="0.15">
+    <system-out><![CDATA[PASS: Login processed correctly; input validation enforced for max chars.
+]]></system-out>
+  </testcase>
+  <testcase name="loginWithEmptyFields" classname="com.selenium.tests.SignupTest" time="0.258"/>
+  <testcase name="loginWithSQLInjection" classname="com.selenium.tests.SignupTest" time="0.317">
+    <system-out><![CDATA[SQL Injection attempt blocked successfully
+]]></system-out>
+  </testcase>
+  <testcase name="loginWithSpecialCharacters" classname="com.selenium.tests.SignupTest" time="0.123">
+    <system-out><![CDATA[Special characters  attempt blocked successfully
+]]></system-out>
+  </testcase>
+  <testcase name="signupWithValidCredentials" classname="com.selenium.tests.SignupTest" time="10.319">
+    <failure message="Expected condition failed: waiting for visibility of element located by By.linkText: Login here (tried for 10 second(s) with 500 milliseconds interval)&#10;Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-23-generic&apos;, java.version: &apos;21.0.3&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 123.0, moz:accessibilityChecks: false, moz:buildID: 20240213221259, moz:debuggerAddress: 127.0.0.1:27552, moz:firefoxOptions: {args: [--headless]}, moz:geckodriverVersion: 0.34.0, moz:headless: true, moz:platformVersion: 6.17.0-23-generic, moz:processID: 11564, moz:profile: /tmp/rust_mozprofilemvF6oC, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://172.28.0.3:4444/sessio..., se:cdpVersion: 85.0, se:noVncPort: 7900, se:vnc: ws://172.28.0.3:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.28.0.3:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}&#10;Session ID: 03791986-23be-466e-a17f-eda5b22d096a" type="org.openqa.selenium.TimeoutException"><![CDATA[org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element located by By.linkText: Login here (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-23-generic', java.version: '21.0.3'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 123.0, moz:accessibilityChecks: false, moz:buildID: 20240213221259, moz:debuggerAddress: 127.0.0.1:27552, moz:firefoxOptions: {args: [--headless]}, moz:geckodriverVersion: 0.34.0, moz:headless: true, moz:platformVersion: 6.17.0-23-generic, moz:processID: 11564, moz:profile: /tmp/rust_mozprofilemvF6oC, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://172.28.0.3:4444/sessio..., se:cdpVersion: 85.0, se:noVncPort: 7900, se:vnc: ws://172.28.0.3:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.28.0.3:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 03791986-23be-466e-a17f-eda5b22d096a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.selenium.tests.SignupTest.signupWithValidCredentials(SignupTest.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:137)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:148)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:88)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:91)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1212)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:1090)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:910)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:906)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:283)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:206)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+]]></failure>
+  </testcase>
+  <testcase name="verifyAllElementsPresent" classname="com.selenium.tests.SignupTest" time="0.084"/>
+  <testcase name="verifyButtonVisibility" classname="com.selenium.tests.SignupTest" time="0.03"/>
+  <testcase name="verifyDuplicateEmailValidation" classname="com.selenium.tests.SignupTest" time="0.151"/>
+  <testcase name="verifyDuplicateUsernameValidation" classname="com.selenium.tests.SignupTest" time="0.16"/>
+  <testcase name="verifyEmailFormatValidation" classname="com.selenium.tests.SignupTest" time="0.309">
+    <system-out><![CDATA[Validation message: Please enter an email address.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyErrorMessagesForInvalidInput" classname="com.selenium.tests.SignupTest" time="0.337">
+    <system-out><![CDATA[Username Msg: 
+Email Msg  : Please enter an email address.
+Password Msg  : 
+Confirm password Msg  : 
+Validation message: Please enter an email address.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyKeyboardNavigationSignup" classname="com.selenium.tests.SignupTest" time="10.222">
+    <failure message="Expected condition failed: waiting for element to be clickable: By.xpath: //a[contains(text(),&apos;Login here&apos;)] (tried for 10 second(s) with 500 milliseconds interval)&#10;Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-23-generic&apos;, java.version: &apos;21.0.3&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 123.0, moz:accessibilityChecks: false, moz:buildID: 20240213221259, moz:debuggerAddress: 127.0.0.1:1600, moz:firefoxOptions: {args: [--headless]}, moz:geckodriverVersion: 0.34.0, moz:headless: true, moz:platformVersion: 6.17.0-23-generic, moz:processID: 13389, moz:profile: /tmp/rust_mozprofileRe2ccl, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://172.28.0.3:4444/sessio..., se:cdpVersion: 85.0, se:noVncPort: 7900, se:vnc: ws://172.28.0.3:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.28.0.3:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}&#10;Session ID: bb0da2b9-2484-4ff4-b4a8-c28966928c1b" type="org.openqa.selenium.TimeoutException"><![CDATA[org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for element to be clickable: By.xpath: //a[contains(text(),'Login here')] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-23-generic', java.version: '21.0.3'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 123.0, moz:accessibilityChecks: false, moz:buildID: 20240213221259, moz:debuggerAddress: 127.0.0.1:1600, moz:firefoxOptions: {args: [--headless]}, moz:geckodriverVersion: 0.34.0, moz:headless: true, moz:platformVersion: 6.17.0-23-generic, moz:processID: 13389, moz:profile: /tmp/rust_mozprofileRe2ccl, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://172.28.0.3:4444/sessio..., se:cdpVersion: 85.0, se:noVncPort: 7900, se:vnc: ws://172.28.0.3:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.28.0.3:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: bb0da2b9-2484-4ff4-b4a8-c28966928c1b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.selenium.tests.SignupTest.verifyKeyboardNavigationSignup(SignupTest.java:384)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:137)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:148)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:88)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:91)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1212)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:1090)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:910)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:906)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:283)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:206)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+]]></failure>
+  </testcase>
+  <testcase name="verifyLabelsVisible" classname="com.selenium.tests.SignupTest" time="0.032"/>
+  <testcase name="verifyMaxUsernameLength" classname="com.selenium.tests.SignupTest" time="0.328"/>
+  <testcase name="verifyMinUsernameLength" classname="com.selenium.tests.SignupTest" time="0.317"/>
+  <testcase name="verifyNoSensitiveInformationInErrorMessages" classname="com.selenium.tests.SignupTest" time="0.299">
+    <system-out><![CDATA[ UI messages verified — No sensitive data leakage detected
+]]></system-out>
+  </testcase>
+  <testcase name="verifyPasswordFieldsAreMasked" classname="com.selenium.tests.SignupTest" time="0.063"/>
+  <testcase name="verifyPasswordMismatchValidation" classname="com.selenium.tests.SignupTest" time="0.118"/>
+  <testcase name="verifyResponsiveLayout" classname="com.selenium.tests.SignupTest" time="6.883">
+    <system-out><![CDATA[UI adjusts properly in Desktop, Tablet, Mobile view
+]]></system-out>
+  </testcase>
+  <testcase name="verifySignupPageTitle" classname="com.selenium.tests.SignupTest" time="0.002"/>
+  <testcase name="verifySignupPerformance" classname="com.selenium.tests.SignupTest" time="0.111">
+    <system-out><![CDATA[Signup response time: 36 ms
+]]></system-out>
+  </testcase>
+  <testcase name="verifySignupRateLimiting" classname="com.selenium.tests.SignupTest" time="3.163">
+    <system-out><![CDATA[Rate limiting not implemented yet.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyWeakPassword" classname="com.selenium.tests.SignupTest" time="0.301"/>
+  <testcase name="tesLongLengthDestDirectoryPath" classname="com.selenium.tests.BackupSchedulerTest" time="60.823">
+    <system-out><![CDATA[Message after scheduling with long length dest path: Backup scheduled at 12:55
+Current Backup Status: Skipped
+Current Backup Status: Skipped
+Current Backup Status: Skipped
+Current Backup Status: Skipped
+Current Backup Status: Failed
+Final Backup Status for min-length path: Failed
+]]></system-out>
+  </testcase>
+  <testcase name="tesLongLengthSourceDirectoryPath" classname="com.selenium.tests.BackupSchedulerTest" time="60.828">
+    <system-out><![CDATA[Message after scheduling with long length path: Backup scheduled at 12:56
+Current Backup Status: Skipped
+Current Backup Status: Skipped
+Current Backup Status: Skipped
+Current Backup Status: Skipped
+Current Backup Status: Failed
+Final Backup Status for min-length path: Failed
+]]></system-out>
+  </testcase>
+  <testcase name="testBackupScheduledNextDay" classname="com.selenium.tests.BackupSchedulerTest" time="1.215">
+    <system-out><![CDATA[Current Time       : 12:56:13.431471783
+Backup Set Time    : 12:55
+Scheduled Time     : 12:55
+Next-Day Scheduled : true
+]]></system-out>
+  </testcase>
+  <testcase name="testBackupTimePathEmpty" classname="com.selenium.tests.BackupSchedulerTest" time="0.313">
+    <system-out><![CDATA[Validation Message: Please fill out this field.
+]]></system-out>
+  </testcase>
+  <testcase name="testBoundaryTimeValues" classname="com.selenium.tests.BackupSchedulerTest" time="3.292">
+    <system-out><![CDATA[Backup message for time 00:00: Backup scheduled at 00:00
+Backup message for time 02:45: Backup scheduled at 02:45
+Backup message for time 12:00: Backup scheduled at 12:00
+Backup message for time 23:59: Backup scheduled at 23:59
+Backup message for time 25:99: Backup scheduled at 23:59
+Backup message for time 7: Backup scheduled at 23:59
+Backup message for time : Backup scheduled at 23:59
+]]></system-out>
+  </testcase>
+  <testcase name="testDirectoryTraversalPrevention" classname="com.selenium.tests.BackupSchedulerTest" time="0.112">
+    <system-out><![CDATA[Validation message: Please fill out this field.
+]]></system-out>
+  </testcase>
+  <testcase name="testEmptyFields" classname="com.selenium.tests.BackupSchedulerTest" time="15.445">
+    <system-out><![CDATA[Empty fields message: No message returned
+]]></system-out>
+  </testcase>
+  <testcase name="testEmptySourceDirectoryBehavior" classname="com.selenium.tests.BackupSchedulerTest" time="0.688">
+    <system-out><![CDATA[Message After Scheduling if source dir has no files: Backup scheduled at 12:57
+Current Status: 'Skipped'
+Final Backup Status for Empty Source Folder: Skipped
+]]></system-out>
+  </testcase>
+  <testcase name="testEnableDisableBackup" classname="com.selenium.tests.BackupSchedulerTest" time="1.23">
+    <system-out><![CDATA[Status after enable: current status: enabled
+Status after disable: current status: disabled
+]]></system-out>
+  </testcase>
+  <testcase name="testFileAsDestination" classname="com.selenium.tests.BackupSchedulerTest" time="0.679">
+    <system-out><![CDATA[Destination is a file. Expecting backup to fail or skip.
+Backup message: Backup scheduled at 12:57
+Current Status: Skipped
+Final Backup Status: Skipped
+]]></system-out>
+  </testcase>
+  <testcase name="testFontsColorsAndStyles" classname="com.selenium.tests.BackupSchedulerTest" time="0.072">
+    <system-out><![CDATA[Input font: sans-serif
+Input font: sans-serif
+Input font: monospace
+Button font: sans-serif
+Button font: sans-serif
+]]></system-out>
+  </testcase>
+  <testcase name="testInValidPathBackupStatus" classname="com.selenium.tests.BackupSchedulerTest" time="0.684">
+    <system-out><![CDATA[Invalid path message:Backup scheduled at 12:57
+Final Backup Status: Skipped
+]]></system-out>
+  </testcase>
+  <testcase name="testInputFieldPlaceholders" classname="com.selenium.tests.BackupSchedulerTest" time="0.047">
+    <system-out><![CDATA[Source placeholder: /home/user/source
+Destination placeholder: /home/user/backup
+Backup Time placeholder: 
+Backup Time input does not have a placeholder (expected for HTML5 time input)
+]]></system-out>
+  </testcase>
+  <testcase name="testMinLengthDirectoryPath" classname="com.selenium.tests.BackupSchedulerTest" time="0.678">
+    <system-out><![CDATA[Message: Backup scheduled at 12:58
+Current Status: Skipped
+Final Status: Skipped
+]]></system-out>
+  </testcase>
+  <testcase name="testMissingAmPmTimeScheduling" classname="com.selenium.tests.BackupSchedulerTest" time="0.658">
+    <system-out><![CDATA[Validation Message: Please fill out this field.
+]]></system-out>
+  </testcase>
+  <testcase name="testMultipleBackupSchedulesUIOnly" classname="com.selenium.tests.BackupSchedulerTest" time="0.77">
+    <system-out><![CDATA[Latest scheduled backup time in UI: 12:59
+]]></system-out>
+  </testcase>
+  <testcase name="testNonexistingDestPath_AutoDirectoryCreation" classname="com.selenium.tests.BackupSchedulerTest" time="45.902">
+    <system-out><![CDATA[Scheduler Message: Backup scheduled at 12:58
+Backup Status Check 1: Skipped
+Backup Status Check 2: Skipped
+Backup Status Check 3: Skipped
+Backup Status Check 4: Skipped
+Backup Status Check 5: Skipped
+Backup Status Check 6: Skipped
+Backup Status Check 7: Skipped
+Backup Status Check 8: Skipped
+Backup Status Check 9: Skipped
+Backup Status Check 10: Success
+FINAL STATUS: SUCCESS - Auto directory creation verified
+]]></system-out>
+  </testcase>
+  <testcase name="testRandomDirectoryPath" classname="com.selenium.tests.BackupSchedulerTest" time="0.687">
+    <system-out><![CDATA[Random path message:Backup scheduled at 12:59
+Final Backup Status: Skipped
+]]></system-out>
+  </testcase>
+  <testcase name="testSQLCommandsDirectoryPath" classname="com.selenium.tests.BackupSchedulerTest" time="0.678">
+    <system-out><![CDATA[Source SQL path message:Backup scheduled at 12:59
+Final Backup Status: Skipped
+]]></system-out>
+  </testcase>
+  <testcase name="testSetBackupTimeButtonClickableAndHover" classname="com.selenium.tests.BackupSchedulerTest" time="15.531">
+    <system-out><![CDATA[Background color on hover: rgb(13, 71, 161)
+Message after clicking button: 
+]]></system-out>
+  </testcase>
+  <testcase name="testSpecialCharactersDestPath" classname="com.selenium.tests.BackupSchedulerTest" time="45.749">
+    <system-out><![CDATA[Invalid special character in dest path message:Backup scheduled at 12:59
+Final Backup Status: Success
+]]></system-out>
+  </testcase>
+  <testcase name="testSpecialCharactersPath" classname="com.selenium.tests.BackupSchedulerTest" time="0.685">
+    <system-out><![CDATA[Source special character path message:Backup scheduled at 13:00
+Final Backup Status: Skipped
+]]></system-out>
+  </testcase>
+  <testcase name="testSuccessMessageAfterValidInputs" classname="com.selenium.tests.BackupSchedulerTest" time="0.656">
+    <system-out><![CDATA[Success message: Backup scheduled at 13:01
+]]></system-out>
+  </testcase>
+  <testcase name="testSymbolicLinkHandling" classname="com.selenium.tests.BackupSchedulerTest" time="0.634">
+    <system-out><![CDATA[Backup message for symlink: backup scheduled at 12:30
+]]></system-out>
+  </testcase>
+  <testcase name="testUIElementsAndLabels" classname="com.selenium.tests.BackupSchedulerTest" time="0.109"/>
+  <testcase name="testUnsupportedFilesBehavior" classname="com.selenium.tests.BackupSchedulerTest" time="0.692">
+    <system-out><![CDATA[Message After Scheduling for unsupported files: Backup scheduled at 13:00
+Current Backup Status: Skipped
+Final Backup Status for Unsupported Files: Skipped
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateBackupTime" classname="com.selenium.tests.BackupSchedulerTest" time="0.886"/>
+  <testcase name="testVBackupOverwrite" classname="com.selenium.tests.BackupSchedulerTest" time="0.677">
+    <system-out><![CDATA[Latest Source File: /data/tmp/file1.txt
+Destination File To Validate: /data/backup/file1.txt
+Status Check 1: Skipped
+BACKUP SKIPPED — Destination unchanged
+Overwrite Behavior Verified Successfully
+]]></system-out>
+  </testcase>
+  <testcase name="testValidPathBackupStatus" classname="com.selenium.tests.BackupSchedulerTest" time="0.673">
+    <system-out><![CDATA[Valid path message:Backup scheduled at 13:00
+]]></system-out>
+  </testcase>
+  <testcase name="testValidTimeScheduling" classname="com.selenium.tests.BackupSchedulerTest" time="0.642"/>
+  <testcase name="testViewStatusLinkClickableAndHover" classname="com.selenium.tests.BackupSchedulerTest" time="0.21">
+    <system-out><![CDATA[Link color on hover: rgb(13, 71, 161)
+Current URL after click: http://app:8080/Docker_backup/index.jsp
+]]></system-out>
+  </testcase>
+  <testcase name="testViewStatusNavigation" classname="com.selenium.tests.BackupSchedulerTest" time="0.076"/>
+  <testcase name="testdestPathEmpty" classname="com.selenium.tests.BackupSchedulerTest" time="0.34">
+    <system-out><![CDATA[Validation message: Please fill out this field.
+]]></system-out>
+  </testcase>
+  <testcase name="testsourcePathEmpty" classname="com.selenium.tests.BackupSchedulerTest" time="0.306">
+    <system-out><![CDATA[Validation message: Please fill out this field.
+]]></system-out>
+  </testcase>
+  <testcase name="textFileAsSource" classname="com.selenium.tests.BackupSchedulerTest" time="0.676">
+    <system-out><![CDATA[Source file path message:Backup scheduled at 13:00
+Final Backup Status: Skipped
+]]></system-out>
+  </testcase>
+  <testcase name="verifyBackupDoesNotRunBeforeScheduledTime" classname="com.selenium.tests.BackupSchedulerTest" time="65.893">
+    <system-out><![CDATA[ Backup did NOT run before scheduled time — Test Passed
+]]></system-out>
+  </testcase>
+  <testcase name="verifyBackupLogTemplate" classname="com.selenium.tests.BackupSchedulerTest" time="60.766">
+    <system-out><![CDATA[UI Status: Skipped
+UI Status: Skipped
+UI Status: Skipped
+UI Status: Skipped
+UI Status: Success
+Checking log path: /usr/local/tomcat/webapps/Docker_backup/backup_history.txt
+Backend Status: Success
+Backup verified successfully. UI Status: Success, Backend Status: Success
+]]></system-out>
+  </testcase>
+  <testcase name="verifyBackupRunsAtScheduledTime" classname="com.selenium.tests.BackupSchedulerTest" time="60.763">
+    <system-out><![CDATA[======================================
+ Backup Scheduling Verification Test
+ Scheduled Time : 13:03
+======================================
+Current Status: Skipped
+Current Status: Skipped
+Current Status: Skipped
+Current Status: Skipped
+Current Status: Success
+--------------------------------------
+ Scheduled Time : 13:03
+ Backup Run Time: 13:03:08
+ Final Status   : Success
+--------------------------------------
+]]></system-out>
+  </testcase>
+  <testcase name="verifyBackupStatusAfterEnablingBackup" classname="com.selenium.tests.BackupSchedulerTest" time="0.188">
+    <system-out><![CDATA[Backup Status: 
+TEST PASSED — Backup status shown correctly after enabling backup.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyBackupStatusPageWhenDisabled" classname="com.selenium.tests.BackupSchedulerTest" time="0.615">
+    <system-out><![CDATA[Backup Status: 
+TEST PASSED — Backup status shows Disabled correctly.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyCurrentStatusWhenBackupDisabled" classname="com.selenium.tests.BackupSchedulerTest" time="1.116">
+    <system-out><![CDATA[Current Status: Current Status: Disabled
+Enable Button Text: Enable & Schedule Backup
+]]></system-out>
+  </testcase>
+  <testcase name="verifyCurrentStatusWhenBackupEnabled" classname="com.selenium.tests.BackupSchedulerTest" time="0.681">
+    <system-out><![CDATA[Current Status: Current Status: Enabled
+Enable Button Text: Update & Reschedule Backup
+]]></system-out>
+  </testcase>
+  <testcase name="verifyErrorMessagesForInvalidInput" classname="com.selenium.tests.BackupSchedulerTest" time="0.291">
+    <system-out><![CDATA[Source Msg: 
+Dest Msg  : 
+Time Msg  : Please fill out this field.
+]]></system-out>
+  </testcase>
+  <testcase name="verifyInputFieldsAlignmentAndVisibility" classname="com.selenium.tests.BackupSchedulerTest" time="1.116">
+    <system-out><![CDATA[UI Alignment & Visibility Test Passed
+]]></system-out>
+  </testcase>
+  <testcase name="verifyKeyboardNavigationSignup" classname="com.selenium.tests.BackupSchedulerTest" time="0.123"/>
+  <testcase name="verifyLargeDirectoryBackupCompletesSuccessfully" classname="com.selenium.tests.BackupSchedulerTest" time="45.74">
+    <system-out><![CDATA[Scheduler Message = Backup scheduled at 13:04
+Backup Status: Skipped
+Backup Status: Skipped
+Backup Status: Success
+Large Directory Backup Test Passed Successfully!
+]]></system-out>
+  </testcase>
+  <testcase name="verifyPermissionDeniedForRestrictedDestinationDirectory" classname="com.selenium.tests.BackupSchedulerTest" time="45.739">
+    <system-out><![CDATA[Scheduler Message: Backup scheduled at 13:05
+Backup Status: Skipped
+Backup Status: Skipped
+Backup Status: Skipped
+Backup Status: Failed
+]]></system-out>
+  </testcase>
+  <testcase name="verifyPermissionDeniedForRestrictedSourceDirectory" classname="com.selenium.tests.BackupSchedulerTest" time="60.766">
+    <system-out><![CDATA[Scheduler Message: Backup scheduled at 13:06
+Backup Status: Skipped
+Backup Status: Skipped
+Backup Status: Skipped
+Backup Status: Skipped
+Backup Status: Failed
+]]></system-out>
+  </testcase>
+  <testcase name="verifyResponsiveLayout" classname="com.selenium.tests.BackupSchedulerTest" time="6.852">
+    <system-out><![CDATA[UI adjusts properly in Desktop, Tablet, Mobile view
+]]></system-out>
+  </testcase>
+  <testcase name="verifyStatusChangeOnWelcomePageAfterEnablingBackup" classname="com.selenium.tests.BackupSchedulerTest" time="1.247">
+    <system-out><![CDATA[Backup Scheduler Status: Current Status: Enabled
+Current Welcome Page Status: Scheduled
+]]></system-out>
+  </testcase>
+  <testcase name="verifyWelcomePageWhenDisabled" classname="com.selenium.tests.BackupSchedulerTest" time="0.606">
+    <system-out><![CDATA[Backup Status: Disabled
+]]></system-out>
+  </testcase>
+</testsuite>

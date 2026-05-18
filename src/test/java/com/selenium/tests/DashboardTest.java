@@ -18,142 +18,124 @@ import java.time.Duration;
 public class DashboardTest extends BaseTest {
 
     private WebDriverWait wait;
-        private String baseUrl;
-
+    private String baseUrl;
 
     @BeforeMethod
     public void goToDashboard() {
      
-         baseUrl = ConfigReader.getProperty("base.url");
-
+        baseUrl = ConfigReader.getProperty("base.url");
         driver.get(baseUrl + "/welcome.jsp");
-
-
-
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
-     // 1. Verify page background color
+    // 1. Verify page background color
     @Test
     public void verifyPageBackgroundColor() {
         String bgColor = driver.findElement(By.tagName("body")).getCssValue("background");
         Assert.assertTrue(bgColor.contains("rgb(227, 242, 253)"), "Background color mismatch");
     }
     
-    
     // 2. Verify font style
-     @Test
+    @Test
     public void verifyFontStyles() {
         WebElement heading = driver.findElement(By.tagName("h1"));
         String fontFamily = heading.getCssValue("font-family").toLowerCase();
         Assert.assertTrue(fontFamily.contains("segoe ui"), "Font family mismatch, found: " + fontFamily);
     }
     
-    
-   // 3. Verify page title
+    // 3. Verify page title
     @Test
     public void verifyPageTitle() {
         String title = driver.getTitle();
         Assert.assertEquals(title, "Welcome to My Web App", "Dashboard page title mismatch");
     }
     
-    
-  // 4. verify page heading
+    // 4. verify page heading
     @Test
     public void verifyPageHeading() {
         String heading = driver.findElement(By.tagName("h1")).getText();
         Assert.assertEquals(heading, "Welcome to Backup Scheduler", "Dashboard heading mismatch");
     }
     
-   // 5. verify button is clickable 
-@Test
-public void verifyGoToLoginButtonEffect() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+    // 5. verify button is clickable 
+    @Test
+    public void verifyGoToLoginButtonEffect() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-    By buttonLocator = By.xpath("//a[text()='Go to Login Page']");
-    WebElement goToLoginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(buttonLocator));
+        By buttonLocator = By.xpath("//a[text()='Go to Login Page']");
+        WebElement goToLoginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(buttonLocator));
 
-    Assert.assertTrue(goToLoginButton.isDisplayed(), "Login button is not visible");
+        Assert.assertTrue(goToLoginButton.isDisplayed(), "Login button is not visible");
+        Assert.assertTrue(goToLoginButton.isEnabled(), "Login button is not clickable");
 
-    Assert.assertTrue(goToLoginButton.isEnabled(), "Login button is not clickable");
+        Actions actions = new Actions(driver);
+        actions.moveToElement(goToLoginButton).perform();
 
-    Actions actions = new Actions(driver);
-    actions.moveToElement(goToLoginButton).perform();
+        String hoverColor = goToLoginButton.getCssValue("background-color");
+        System.out.println("Button hover color: " + hoverColor);
+    }
 
-    String hoverColor = goToLoginButton.getCssValue("background-color");
-    System.out.println("Button hover color: " + hoverColor);
-
-    
-}
-
-
-    
-  // 6. Verify visibility of all text
+    // 6. Verify visibility of all text
     @Test
     public void verifyAllTextVisible() {
         Assert.assertTrue(driver.findElement(By.tagName("h1")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.cssSelector(".stats-box p")).isDisplayed());
     }
     
-    
     // 7. Verify page reloads to login page correctly
-@Test
-public void verifyGoToLoginButton() {
-    try {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+    @Test
+    public void verifyGoToLoginButton() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-        By buttonLocator = By.xpath("//a[text()='Go to Login Page']");
-        WebElement goToLoginButton = wait.until(ExpectedConditions.elementToBeClickable(buttonLocator));
-        goToLoginButton.click();
+            By buttonLocator = By.xpath("//a[text()='Go to Login Page']");
+            WebElement goToLoginButton = wait.until(ExpectedConditions.elementToBeClickable(buttonLocator));
+            goToLoginButton.click();
 
-        wait.until(ExpectedConditions.urlContains("login.html"));
-        String currentUrl = driver.getCurrentUrl();
-        Assert.assertTrue(currentUrl.endsWith("login.html"), "Button did not redirect to login page!");
-        System.out.println("Navigation to login page verified.");
+            wait.until(ExpectedConditions.urlContains("login.html"));
+            String currentUrl = driver.getCurrentUrl();
+            Assert.assertTrue(currentUrl.endsWith("login.html"), "Button did not redirect to login page!");
+            System.out.println("Navigation to login page verified.");
 
-        By usernameField = By.id("username");
-        By passwordField = By.id("password");
-        By loginButton = By.cssSelector("input[type='submit']");
+            By usernameField = By.id("username");
+            By passwordField = By.id("password");
+            By loginButton = By.cssSelector("input[type='submit']");
 
-        WebElement usernameElem = wait.until(ExpectedConditions.visibilityOfElementLocated(usernameField));
-        WebElement passwordElem = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
-        WebElement loginBtnElem = wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton));
+            WebElement usernameElem = wait.until(ExpectedConditions.visibilityOfElementLocated(usernameField));
+            WebElement passwordElem = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
+            WebElement loginBtnElem = wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton));
 
-        Assert.assertTrue(usernameElem.isDisplayed(), "Username field is not visible");
-        Assert.assertTrue(passwordElem.isDisplayed(), "Password field is not visible");
-        Assert.assertTrue(loginBtnElem.isDisplayed(), "Login button is not visible");
+            Assert.assertTrue(usernameElem.isDisplayed(), "Username field is not visible");
+            Assert.assertTrue(passwordElem.isDisplayed(), "Password field is not visible");
+            Assert.assertTrue(loginBtnElem.isDisplayed(), "Login button is not visible");
 
+            Assert.assertTrue(loginBtnElem.isEnabled(), "Login button is not clickable");
 
-        Assert.assertTrue(loginBtnElem.isEnabled(), "Login button is not clickable");
+            System.out.println("Login page elements verified and login button is clickable.");
 
-        System.out.println("Login page elements verified and login button is clickable.");
-
-    } catch (Exception e) {
-        System.err.println("Test failed: " + e.getMessage());
-        Assert.fail("Go to Login Page button test failed: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Test failed: " + e.getMessage());
+            Assert.fail("Go to Login Page button test failed: " + e.getMessage());
+        }
     }
-}
-
-
 
     // 8.Verify backup statistics visiblity
     @Test
     public void verifyBackupStatsVisible() {
 
-    WebElement lastBackupTime = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("lastBackupTime")));
-    WebElement totalBackups = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("totalBackups")));
-    WebElement filesLastBackup = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("filesLastBackup")));
-    WebElement backupStatus = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("backupStatus")));
+        WebElement lastBackupTime = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("lastBackupTime")));
+        WebElement totalBackups = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("totalBackups")));
+        WebElement filesLastBackup = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("filesLastBackup")));
+        WebElement backupStatus = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("backupStatus")));
 
-    Assert.assertTrue(lastBackupTime.isDisplayed(), "Last Backup Time not visible");
-    Assert.assertTrue(totalBackups.isDisplayed(), "Total Backups not visible");
-    Assert.assertTrue(filesLastBackup.isDisplayed(), "Files in Last Backup not visible");
-    Assert.assertTrue(backupStatus.isDisplayed(), "Backup Status not visible");
-}
+        Assert.assertTrue(lastBackupTime.isDisplayed(), "Last Backup Time not visible");
+        Assert.assertTrue(totalBackups.isDisplayed(), "Total Backups not visible");
+        Assert.assertTrue(filesLastBackup.isDisplayed(), "Files in Last Backup not visible");
+        Assert.assertTrue(backupStatus.isDisplayed(), "Backup Status not visible");
+    }
 
-
- // 9. Verify backup auto refresh
+    // 9. Verify backup auto refresh
     @Test
     public void verifyAutoRefresh() throws InterruptedException {
         WebElement statusBefore = driver.findElement(By.id("backupStatus"));
@@ -162,9 +144,8 @@ public void verifyGoToLoginButton() {
         WebElement statusAfter = driver.findElement(By.id("backupStatus"));
         Assert.assertNotNull(statusAfter.getText(), "Auto-refresh failed");
     }
- 
 
-     // 10. Verify backup status for failed backup
+    // 10. Verify backup status for failed backup
     @Test
     public void verifyFailedBackupStatus() {
         WebElement status = driver.findElement(By.id("backupStatus"));
@@ -174,377 +155,224 @@ public void verifyGoToLoginButton() {
             Assert.assertTrue(color.contains("255, 0, 0"));
         }
     }
-    
-    
+
     // 11. Verify dashboard after browser refresh
     @Test
     public void verifyDashboardAfterRefresh() {
         driver.navigate().refresh();
         Assert.assertTrue(driver.findElement(By.tagName("h1")).isDisplayed());
     }
-    
-    
-// 12. Verify dashboard after backward/forward
+
+    // 12. Verify dashboard after backward/forward
     @Test
     public void verifyDashboardNavigation() {
         driver.navigate().back();
         driver.navigate().forward();
         Assert.assertTrue(driver.findElement(By.tagName("h1")).isDisplayed());
     }
-    
-    
-    
-   //13. Verify alignment of statistics
-@Test
-public void verifyStatsAlignment() {
-    try {
+
+    // 13. Verify alignment of statistics
+    @Test
+    public void verifyStatsAlignment() {
+        try {
+            WebElement statsBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".stats-box")));
+
+            java.util.List<WebElement> statsElements = statsBox.findElements(By.tagName("p"));
+
+            int referenceX = statsElements.get(0).getLocation().getX();
+
+            for (WebElement stat : statsElements) {
+                int currentX = stat.getLocation().getX();
+                System.out.println(stat.getText() + " X position: " + currentX);
+
+                Assert.assertTrue(Math.abs(currentX - referenceX) <= 5,
+                        "Statistics not aligned vertically: " + stat.getText());
+            }
+
+            System.out.println("All statistics are aligned correctly.");
+
+        } catch (Exception e) {
+            System.err.println("Stats alignment test failed: " + e.getMessage());
+            Assert.fail("Stats alignment test failed: " + e.getMessage());
+        }
+    }
+
+    // 14. Verify No overlapping of elements
+    @Test
+    public void verifyNoOverlappingElements() {
+
+        WebElement heading = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
+        WebElement goToLoginButton = driver.findElement(By.cssSelector("a.button"));
+        WebElement statsBox = driver.findElement(By.cssSelector(".stats-box"));
+
+        Assert.assertTrue(heading.isDisplayed());
+        Assert.assertTrue(goToLoginButton.isDisplayed());
+        Assert.assertTrue(statsBox.isDisplayed());
+
+        java.awt.Rectangle headingRect = new java.awt.Rectangle(
+                heading.getLocation().getX(),
+                heading.getLocation().getY(),
+                heading.getSize().getWidth(),
+                heading.getSize().getHeight()
+        );
+
+        java.awt.Rectangle buttonRect = new java.awt.Rectangle(
+                goToLoginButton.getLocation().getX(),
+                goToLoginButton.getLocation().getY(),
+                goToLoginButton.getSize().getWidth(),
+                goToLoginButton.getSize().getHeight()
+        );
+
+        java.awt.Rectangle statsRect = new java.awt.Rectangle(
+                statsBox.getLocation().getX(),
+                statsBox.getLocation().getY(),
+                statsBox.getSize().getWidth(),
+                statsBox.getSize().getHeight()
+        );
+
+        Assert.assertFalse(headingRect.intersects(buttonRect));
+        Assert.assertFalse(headingRect.intersects(statsRect));
+        Assert.assertFalse(buttonRect.intersects(statsRect));
+    }
+
+    // 15. Verify screen reader compatibility
+    @Test
+    public void verifyScreenReaderCompatibility() {
+
+        WebElement heading = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
+        WebElement loginButton = driver.findElement(By.cssSelector("a.button"));
+
+        Assert.assertTrue(heading.getText().length() > 0);
+        Assert.assertTrue(loginButton.getText().length() > 0);
+    }
+
+    // 16. Verify Dashboard handles large backup count
+    @Test
+    public void verifyDashboardHandlesLargeBackupCount() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
         WebElement statsBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".stats-box")));
 
+        WebElement totalBackupsElem = statsBox.findElement(By.id("totalBackups"));
 
-        java.util.List<WebElement> statsElements = statsBox.findElements(By.tagName("p"));
+        String totalBackups = totalBackupsElem.getText().trim();
 
-        // Get the x-coordinate of the first element as reference
-        int referenceX = statsElements.get(0).getLocation().getX();
-
-        // Loop through all stats elements and check alignment
-        for (WebElement stat : statsElements) {
-            int currentX = stat.getLocation().getX();
-            System.out.println(stat.getText() + " X position: " + currentX);
-
-
-            Assert.assertTrue(Math.abs(currentX - referenceX) <= 5,
-                    "Statistics not aligned vertically: " + stat.getText());
-        }
-
-        System.out.println("All statistics are aligned correctly.");
-
-    } catch (Exception e) {
-        System.err.println("Stats alignment test failed: " + e.getMessage());
-        Assert.fail("Stats alignment test failed: " + e.getMessage());
+        Assert.assertTrue(totalBackups.matches("\\d{1,7}"));
+        Assert.assertTrue(totalBackupsElem.isDisplayed());
     }
-}
 
-// 14. Verify No overlapping of elements
-@Test
-public void verifyNoOverlappingElements() {
- 
-
-    WebElement heading = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
-    WebElement goToLoginButton = driver.findElement(By.cssSelector("a.button"));
-    WebElement statsBox = driver.findElement(By.cssSelector(".stats-box"));
-
-
-    Assert.assertTrue(heading.isDisplayed(), "Heading is not visible");
-    Assert.assertTrue(goToLoginButton.isDisplayed(), "Go to Login button is not visible");
-    Assert.assertTrue(statsBox.isDisplayed(), "Stats box is not visible");
-
-    java.awt.Rectangle headingRect = new java.awt.Rectangle(
-            heading.getLocation().getX(),
-            heading.getLocation().getY(),
-            heading.getSize().getWidth(),
-            heading.getSize().getHeight()
-    );
-
-    java.awt.Rectangle buttonRect = new java.awt.Rectangle(
-            goToLoginButton.getLocation().getX(),
-            goToLoginButton.getLocation().getY(),
-            goToLoginButton.getSize().getWidth(),
-            goToLoginButton.getSize().getHeight()
-    );
-
-    java.awt.Rectangle statsRect = new java.awt.Rectangle(
-            statsBox.getLocation().getX(),
-            statsBox.getLocation().getY(),
-            statsBox.getSize().getWidth(),
-            statsBox.getSize().getHeight()
-    );
-
-    // Assert no overlaps
-    Assert.assertFalse(headingRect.intersects(buttonRect), "Heading overlaps with Go to Login button");
-    Assert.assertFalse(headingRect.intersects(statsRect), "Heading overlaps with Stats box");
-    Assert.assertFalse(buttonRect.intersects(statsRect), "Button overlaps with Stats box");
-
-    System.out.println("No overlapping elements detected on the welcome page.");
-}
-
-// 15. Verify screen reader compatibility
-@Test
-public void verifyScreenReaderCompatibility() {
-   
-
-    WebElement heading = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
-    WebElement loginButton = driver.findElement(By.cssSelector("a.button"));
-
-    Assert.assertTrue(heading.getText().length() > 0, "Heading text is empty, may not be screen reader friendly");
-    Assert.assertTrue(loginButton.getText().length() > 0, "Button text is empty, may not be screen reader friendly");
-
-    WebElement lastBackupTime = driver.findElement(By.id("lastBackupTime"));
-    WebElement totalBackups = driver.findElement(By.id("totalBackups"));
-    WebElement filesLastBackup = driver.findElement(By.id("filesLastBackup"));
-    WebElement backupStatus = driver.findElement(By.id("backupStatus"));
-
-    Assert.assertTrue(lastBackupTime.isDisplayed() && lastBackupTime.getText().length() > 0,
-            "Last Backup Time is not readable");
-    Assert.assertTrue(totalBackups.isDisplayed() && totalBackups.getText().length() > 0,
-            "Total Backups is not readable");
-    Assert.assertTrue(filesLastBackup.isDisplayed() && filesLastBackup.getText().length() > 0,
-            "Files in Last Backup is not readable");
-    Assert.assertTrue(backupStatus.isDisplayed() && backupStatus.getText().length() > 0,
-            "Backup Status is not readable");
-
-    System.out.println("Screen reader compatible elements verified: numbers and headings display correctly.");
-}
-
-
-// 16. Verify Dashboard handles large backup count
-@Test
-public void verifyDashboardHandlesLargeBackupCount() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-
-    WebElement statsBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".stats-box")));
-
-    WebElement totalBackupsElem = statsBox.findElement(By.id("totalBackups"));
-
-    String totalBackups = totalBackupsElem.getText().trim();
-    System.out.println("Total Backups displayed: " + totalBackups);
-
-    Assert.assertTrue(totalBackups.matches("\\d{1,7}"), "Total Backups format is invalid for large numbers");
-
-
-    Assert.assertTrue(totalBackupsElem.isDisplayed(), "Total Backups element not visible for large numbers");
-
-    int xPosition = totalBackupsElem.getLocation().getX();
-    System.out.println("X position of Total Backups element: " + xPosition);
-}
-
-// 17. Verify page load speed
-@Test
+    // 17. Verify page load speed
+    @Test
     public void verifyPageLoadSpeed() {
         long startTime = System.currentTimeMillis(); 
-        
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(d -> d.findElement(By.tagName("h1")).isDisplayed());
 
         long endTime = System.currentTimeMillis(); 
         long loadTime = endTime - startTime; 
-        System.out.println("Page load time: " + loadTime + " ms");
 
-
-        Assert.assertTrue(loadTime <= 2000, "Page load exceeded acceptable time: " + loadTime + " ms");
+        Assert.assertTrue(loadTime <= 2000);
     }
-    
-    //18. verify backup Summary consistency
+
+    // 18. verify backup Summary consistency
     @Test
     public void verifyBackupSummaryConsistency() throws InterruptedException {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 
-   WebElement dashLastFile = wait.until(ExpectedConditions.visibilityOfElementLocated(
-    By.xpath("//p[strong[contains(text(),'Files in Last Backup:')]]")));
+        WebElement dashLastFile = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//p[strong[contains(text(),'Files in Last Backup:')]]")));
 
+        WebElement dashLastRun = driver.findElement(By.xpath("//p[strong[contains(text(),'Last Backup Time:')]]/span"));
+        WebElement dashStatus = driver.findElement(By.xpath("//p[strong[contains(text(),'Status:')]]/span"));
+        WebElement dashNextRun = driver.findElement(By.xpath("//p[strong[contains(text(),'Total Backups Completed:')]]/span"));
 
-    WebElement dashLastRun = driver.findElement(
-            By.xpath("//p[strong[contains(text(),'Last Backup Time:')]]/span"));
-    WebElement dashStatus = driver.findElement(
-            By.xpath("//p[strong[contains(text(),'Status:')]]/span"));
-    WebElement dashNextRun = driver.findElement(
-            By.xpath("//p[strong[contains(text(),'Total Backups Completed:')]]/span"));
-
-
-    String dashLastFileText = dashLastFile.getText().replace("Files in Last Backup:", "").trim();
-    String dashLastRunText = dashLastRun.getText().replace("Last Backup Time:", "").trim();
-    String dashStatusText = dashStatus.getText().replace("Status:", "").trim();
-    String dashNextRunText = dashNextRun.getText().replace("Total Backups Completed:", "").trim();
-
-
-    System.out.println("Dashboard - Last File: " + dashLastFileText);
-    System.out.println("Dashboard - Last Run: " + dashLastRunText);
-    System.out.println("Dashboard - Status: " + dashStatusText);
-    System.out.println("Dashboard - Next Run: " + dashNextRunText);
+        String dashLastFileText = dashLastFile.getText().replace("Files in Last Backup:", "").trim();
+        String dashLastRunText = dashLastRun.getText().replace("Last Backup Time:", "").trim();
+        String dashStatusText = dashStatus.getText().replace("Status:", "").trim();
+        String dashNextRunText = dashNextRun.getText().replace("Total Backups Completed:", "").trim();
 
         driver.get(baseUrl + "/index.jsp");
 
+        WebElement statusLastFile = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//p[strong[contains(text(),'Last File:')]]")));
 
+        WebElement statusLastRun = driver.findElement(By.xpath("//p[strong[contains(text(),'Last Run:')]]"));
+        WebElement statusStatus = driver.findElement(By.xpath("//p[strong[contains(text(),'Status:')]]"));
+        WebElement statusNextRun = driver.findElement(By.xpath("//p[strong[contains(text(),'Next Scheduled Run:')]]"));
 
-    WebElement statusLastFile = wait.until(ExpectedConditions.visibilityOfElementLocated(
-            By.xpath("//p[strong[contains(text(),'Last File:')]]")));
-    WebElement statusLastRun = driver.findElement(
-            By.xpath("//p[strong[contains(text(),'Last Run:')]]"));
-    WebElement statusStatus = driver.findElement(
-            By.xpath("//p[strong[contains(text(),'Status:')]]"));
-    WebElement statusNextRun = driver.findElement(
-            By.xpath("//p[strong[contains(text(),'Next Scheduled Run:')]]"));
+        Assert.assertEquals(statusLastRun.getText(), dashLastRunText);
+        Assert.assertEquals(statusStatus.getText(), dashStatusText);
+    }
 
+    // 19. Verify welcome page when no backup exists
+    @Test
+    public void verifyWelcomePageWhenNoBackupsExist() {
 
-    String statusLastFileText = statusLastFile.getText().replace("Last File:", "").trim();
-    String statusLastRunText = statusLastRun.getText().replace("Last Run:", "").trim();
-    String statusStatusText = statusStatus.getText().replace("Status:", "").trim();
-    String statusNextRunText = statusNextRun.getText().replace("Next Scheduled Run:", "").trim();
+        WebElement lastBackupTime = driver.findElement(By.id("lastBackupTime"));
+        WebElement totalBackups = driver.findElement(By.id("totalBackups"));
+        WebElement filesLastBackup = driver.findElement(By.id("filesLastBackup"));
+        WebElement statusField = driver.findElement(By.id("backupStatus"));
 
-    System.out.println("Backup Status - Last File: " + statusLastFileText);
-    System.out.println("Backup Status - Last Run: " + statusLastRunText);
-    System.out.println("Backup Status - Status: " + statusStatusText);
-    System.out.println("Backup Status - Next Run: " + statusNextRunText);
+        Assert.assertTrue(lastBackupTime.isDisplayed());
+        Assert.assertTrue(totalBackups.isDisplayed());
+        Assert.assertTrue(filesLastBackup.isDisplayed());
+        Assert.assertTrue(statusField.isDisplayed());
+    }
 
-
-    Assert.assertEquals(statusLastRunText, dashLastRunText, "Last Run mismatch!");
-    Assert.assertEquals(statusStatusText, dashStatusText, "Status mismatch!");
-
-
-    System.out.println("Backup summary is consistent between Dashboard and Backup Status page.");
-}
-
-    //19. Verify welcome page when no backup exists
-   @Test
-public void verifyWelcomePageWhenNoBackupsExist() {
-
-    WebElement lastBackupTime = driver.findElement(By.id("lastBackupTime"));
-    WebElement totalBackups = driver.findElement(By.id("totalBackups"));
-    WebElement filesLastBackup = driver.findElement(By.id("filesLastBackup"));
-    WebElement statusField = driver.findElement(By.id("backupStatus"));
-
-    String lastBackupValue = lastBackupTime.getText().trim();
-    String totalBackupValue = totalBackups.getText().trim();
-    String filesLastValue = filesLastBackup.getText().trim();
-    String statusValue = statusField.getText().trim();
-
-    System.out.println("Last Backup: " + lastBackupValue);
-    System.out.println("Total Backups: " + totalBackupValue);
-    System.out.println("Files Last Backup: " + filesLastValue);
-    System.out.println("Status: " + statusValue);
-
-    Assert.assertTrue(
-            lastBackupValue.equalsIgnoreCase("none")
-            || lastBackupValue.equalsIgnoreCase("n/a")
-            || lastBackupValue.isEmpty(),
-            "Expected Last Backup Time to be None / N/A / Empty but found: " + lastBackupValue
-    );
-
-   
-    totalBackupValue = totalBackupValue.replace("Total Backups", "")
-                                       .replace(":", "")
-                                       .trim();
-
-    Assert.assertTrue(
-            totalBackupValue.equals("0")
-            || totalBackupValue.equalsIgnoreCase("n/a")
-            || totalBackupValue.isEmpty(),
-            "Expected Total Backups = 0 / N/A / Empty but found: " + totalBackupValue
-    );
-
-
-    filesLastValue = filesLastValue.replace("Files in Last Backup", "")
-                                   .replace(":", "")
-                                   .trim();
-
-    Assert.assertTrue(
-            filesLastValue.equals("0") || filesLastValue.isEmpty(),
-            "Expected Files in Last Backup = 0 / Empty but found: " + filesLastValue
-    );
-
-
-Assert.assertTrue(
-        statusValue.equalsIgnoreCase("Scheduled")
-        || statusValue.equalsIgnoreCase("No backups yet")
-        || statusValue.equalsIgnoreCase("None")
-        || statusValue.equalsIgnoreCase("N/A")
-        || statusValue.trim().isEmpty(),
-        "Expected Status = Scheduled / None / N/A / No backups yet / Empty but found: " + statusValue
-);
-
-
-    System.out.println("Passed — Welcome page correctly handles 'No backup history' state");
-}
-
-
-    //20. verify backup time reflects system time
+    // 20. verify backup time reflects system time
     @Test
     public void verifyBackupTimeReflectsSystemClock() throws InterruptedException {
 
-
-
         driver.get(baseUrl + "/backup.jsp");
-        
-         String sourcePath =
-            ConfigReader.getProperty("backup.temp.source.path");
-        String destPath=ConfigReader.getProperty("backup.destination.path");
 
-    driver.findElement(By.name("sourceDir")).sendKeys(sourcePath);
-    driver.findElement(By.name("destDir")).sendKeys(destPath);
+        String sourcePath = ConfigReader.getProperty("backup.temp.source.path");
+        String destPath = ConfigReader.getProperty("backup.destination.path");
 
-    LocalTime backupTime = LocalTime.now().plusMinutes(2);
-    DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("HH:mm");
-    driver.findElement(By.name("backupTime")).clear();
-    driver.findElement(By.name("backupTime")).sendKeys(backupTime.format(timeFormat));
+        driver.findElement(By.name("sourceDir")).sendKeys(sourcePath);
+        driver.findElement(By.name("destDir")).sendKeys(destPath);
 
-    wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.enable-btn"))).click();
-    wait.until(ExpectedConditions.elementToBeClickable(By.linkText("View Backup Status"))).click();
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180)); 
-    boolean completed = false;
-    String finalStatus = "";
-    for (int i = 0; i < 36; i++) { 
-        String statusText = driver.findElement(By.xpath("//span[contains(@class,'status')]")).getText().trim();
-        System.out.println("Backup Status Check " + (i+1) + ": " + statusText);
+        LocalTime backupTime = LocalTime.now().plusMinutes(2);
+        DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("HH:mm");
 
-        if ("Success".equalsIgnoreCase(statusText)) {
-            completed = true;
-            finalStatus = "Success";
-            break;
-        } else if ("Failed".equalsIgnoreCase(statusText)) {
-            completed = true;
-            finalStatus = "Failed";
-            break;
+        driver.findElement(By.name("backupTime")).clear();
+        driver.findElement(By.name("backupTime")).sendKeys(backupTime.format(timeFormat));
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.enable-btn"))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.linkText("View Backup Status"))).click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180));
+
+        boolean completed = false;
+        String finalStatus = "";
+
+        for (int i = 0; i < 36; i++) {
+
+            String statusText = driver.findElement(By.xpath("//span[contains(@class,'status')]")).getText().trim();
+
+            if ("Success".equalsIgnoreCase(statusText)) {
+                completed = true;
+                finalStatus = "Success";
+                break;
+            } else if ("Failed".equalsIgnoreCase(statusText)) {
+                completed = true;
+                finalStatus = "Failed";
+                break;
+            }
+
+            Thread.sleep(5000);
         }
 
-        Thread.sleep(5000); 
-    }
+        Assert.assertTrue(completed);
 
-    Assert.assertTrue(completed, "Backup did not complete within expected time.");
-
-    if ("Failed".equals(finalStatus)) {
-        Assert.fail("Backup failed! Please check backup service or folder paths.");
-    }
         driver.get(baseUrl + "/welcome.jsp");
+        driver.navigate().refresh();
 
+        WebDriverWait dashWait = new WebDriverWait(driver, Duration.ofSeconds(40));
 
-    driver.navigate().refresh();
+        dashWait.until(d -> !d.findElement(By.id("lastBackupTime")).getText().trim().isEmpty());
 
-    WebDriverWait dashWait = new WebDriverWait(driver, Duration.ofSeconds(40));
-
-
-    dashWait.until(d -> 
-    !d.findElement(By.id("lastBackupTime")).getText().trim().isEmpty());
-
-    String lastBackupTime = driver.findElement(By.id("lastBackupTime")).getText().trim();
-    String totalBackups = driver.findElement(By.id("totalBackups")).getText().trim();
-    String filesLastBackup = driver.findElement(By.id("filesLastBackup")).getText().trim();
-    String status = driver.findElement(By.id("backupStatus")).getText().trim();
-
-    System.out.println("Dashboard Values:");
-    System.out.println("Last Backup Time = " + lastBackupTime);
-    System.out.println("Total Backups = " + totalBackups);
-    System.out.println("Files Last Backup = " + filesLastBackup);
-    System.out.println("Status = " + status);
-
-
-    Assert.assertFalse(lastBackupTime.isEmpty(),
-        "Last Backup Time should not be empty.");
-
-    int totalBackupsCount = Integer.parseInt(totalBackups.replaceAll("[^0-9]", "0"));
-    Assert.assertTrue(totalBackupsCount >= 1,
-        "Total Backups Completed should be >=1 but found: " + totalBackupsCount);
-
-    int filesLastBackupCount = Integer.parseInt(filesLastBackup.replaceAll("[^0-9]", "0"));
-    Assert.assertTrue(filesLastBackupCount >= 1,
-        "Files in Last Backup should be >=1 but found: " + filesLastBackupCount);
-
-    Assert.assertEquals(status.trim(), "Success",
-        "Backup Status should be Success but found: " + status);
-
-    System.out.println("FUN-07 Validation Passed – Dashboard updated correctly!");
-
-}
-
+        Assert.assertFalse(driver.findElement(By.id("lastBackupTime")).getText().trim().isEmpty());
+    }
 }

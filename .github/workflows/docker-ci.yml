@@ -2,15 +2,13 @@ name: Selenium Docker CI/CD
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   selenium-tests:
-    runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        browser: [chrome, firefox]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
@@ -22,21 +20,24 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - name: Build Docker Image
+      - name: Build Containers
         run: docker compose build
 
-      - name: Run Tests (${{ matrix.browser }})
-        run: |
-          docker compose run \
-            -e BROWSER=${{ matrix.browser }} \
-            selenium-tests
+      - name: Start Infrastructure (Selenium + App)
+        run: docker compose up -d app chrome firefox
+
+      - name: Run Chrome Tests
+        run: docker compose run selenium-tests-chrome
+
+      - name: Run Firefox Tests
+        run: docker compose run selenium-tests-firefox
 
       - name: Upload Reports
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: reports-${{ matrix.browser }}
-          path: reports/${{ matrix.browser }}/
+          name: selenium-reports
+          path: reports/
 
       - name: Cleanup
         if: always()

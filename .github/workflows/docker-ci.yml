@@ -6,13 +6,10 @@ on:
       - main
 
 jobs:
-
   selenium-tests:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Code
         uses: actions/checkout@v4
 
@@ -43,4 +40,4 @@ jobs:
 
       - name: Stop Containers
         if: always()
- run: docker compose down
+        run: docker compose down

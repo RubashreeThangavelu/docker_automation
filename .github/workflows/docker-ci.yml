@@ -26,16 +26,13 @@ jobs:
         run: docker compose up -d app firefox
 
       - name: Wait for services
-        run: sleep 15
-
-      - name: Create reports directory
-        run: mkdir -p reports/firefox
+        run: sleep 20
 
       - name: Run Firefox Tests
         run: docker compose run --rm selenium-tests-firefox
 
-      - name: Verify reports
-        run: ls -R reports
+      - name: Verify Reports on Host
+        run: ls -R reports || true
 
       - name: Upload Reports
         uses: actions/upload-artifact@v4
@@ -43,7 +40,3 @@ jobs:
         with:
           name: selenium-reports
           path: reports/firefox/
-
-      - name: Cleanup
-        if: always()
-        run: docker compose down -v

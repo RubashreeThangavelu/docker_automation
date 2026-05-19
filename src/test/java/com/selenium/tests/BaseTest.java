@@ -22,7 +22,7 @@ public void setUp() throws Exception {
     options.addArguments("--headless");
 
     driver = new RemoteWebDriver(
-            new URL("http://firefox:4444"),
+            new URL("http://firefox:4444/wd/hub"),
             options
     );
 

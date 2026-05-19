@@ -1,35 +1,3 @@
-version: "3.9"
-
-x-common-volumes: &common-volumes
-  - ./reports:/app/reports
-  - shared-data:/data
-  - ./Docker_backup:/usr/local/tomcat/webapps/Docker_backup
-
-x-test-template: &test-template
-  build: .
-  working_dir: /app
-  networks:
-    - selenium-grid
-  volumes: *common-volumes
-  command: >
-     sh -c "
-     set -e &&
-     /init-data.sh &&
-
-     echo 'Cleaning old reports...' &&
-     rm -rf /reports/firefox/* &&
-     rm -rf target &&
-
-     echo 'Running Maven tests...' &&
-     mvn clean test &&
-
-     echo 'Done. Reports already in mounted volume' &&
-     ls -R /reports/firefox || true &&
-
-
-     echo 'Reports copied successfully' &&
-     exec sleep infinity"
-
 services:
 
   app:
@@ -54,22 +22,24 @@ services:
     networks:
       - selenium-grid
 
-  selenium-tests-firefox:
-    <<: *test-template
-    container_name: selenium-tests-firefox
+  selenium-tests:
+    build: .
+    container_name: selenium-tests
     depends_on:
       - firefox
       - app
-    environment:
-      BROWSER: firefox
-      SELENIUM_URL: http://firefox:4444/wd/hub
-      
-
+    working_dir: /app
+    command: >
+      sh -c "/init-data.sh; mvn test; mkdir -p /reports; cp -r target/surefire-reports /reports/"
+    volumes:
+      - ./reports:/reports
+      - shared-data:/data
+      - ./Docker_backup:/usr/local/tomcat/webapps/Docker_backup
+    networks:
+      - selenium-grid
 
 volumes:
   shared-data:
 
 networks:
   selenium-grid:
-  
-

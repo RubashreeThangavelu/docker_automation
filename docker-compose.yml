@@ -23,9 +23,9 @@ x-test-template: &test-template
      echo 'Running Maven tests...' &&
      mvn clean test &&
 
-     echo 'Copying reports...' &&
-     mkdir -p /reports/firefox &&
-     cp -r target/surefire-reports/* /reports/firefox/ &&
+     echo 'Done. Reports already in mounted volume' &&
+     ls -R /reports/firefox || true &&
+
 
      echo 'Reports copied successfully' &&
      exec sleep infinity"

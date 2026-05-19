@@ -64,8 +64,24 @@ services:
       BROWSER: firefox
       SELENIUM_URL: http://firefox:4444/wd/hub
 
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+
+    ports:
+      - "8080:8080"
+
+    networks:
+      - selenium-grid
+
 volumes:
   shared-data:
 
 networks:
   selenium-grid:
+  
+

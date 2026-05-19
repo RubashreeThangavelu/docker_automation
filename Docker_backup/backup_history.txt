@@ -599,3 +599,30 @@ Status     : Success
 Size       : 17 bytes
 Duration   : 0 sec
 
+======================================
+Time       : 2026-05-19 07:41:09
+Source     : /data/temp
+Destination: /data/backup
+File       : file6.txt
+Status     : Success
+Size       : 17 bytes
+Duration   : 0 sec
+
+======================================
+Time       : 2026-05-19 07:43:00
+Source     : /data/temp
+Destination: /data/backup
+File       : file6.txt
+Status     : Success
+Size       : 17 bytes
+Duration   : 0 sec
+
+======================================
+Time       : 2026-05-19 07:47:31
+Source     : /data/temp
+Destination: /data/backup
+File       : file6.txt
+Status     : Success
+Size       : 17 bytes
+Duration   : 0 sec
+

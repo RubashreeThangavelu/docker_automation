@@ -11,7 +11,7 @@ RUN mkdir -p /app/restricted_backup \
 
 # Copy dependencies first (cache optimization)
 COPY pom.xml .
-RUN mvn dependency:go-offline
+RUN mvn org.apache.maven.plugins:maven-dependency-plugin:3.6.1:go-offline
 
 
 # Copy source

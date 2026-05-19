@@ -22,16 +22,10 @@ jobs:
       - name: Build Containers
         run: docker compose build
 
-      - name: Start Services
-        run: docker compose up -d app firefox
+      - name: Run Tests (stable mode)
+        run: docker compose up --abort-on-container-exit selenium-tests-firefox
 
-      - name: Wait for services
-        run: sleep 20
-
-      - name: Run Firefox Tests
-        run: docker compose run --rm selenium-tests-firefox
-
-      - name: Verify Reports on Host
+      - name: Verify Reports
         run: ls -R reports || true
 
       - name: Upload Reports

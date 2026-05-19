@@ -1,7 +1,7 @@
 version: "3.9"
 
 x-common-volumes: &common-volumes
-  - ./reports:/reports
+  - ./reports:app/reports
   - shared-data:/data
   - ./Docker_backup:/usr/local/tomcat/webapps/Docker_backup
 
@@ -63,20 +63,8 @@ services:
     environment:
       BROWSER: firefox
       SELENIUM_URL: http://firefox:4444/wd/hub
+      
 
-  jenkins:
-    image: jenkins/jenkins:lts
-    container_name: jenkins
-
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
-
-    ports:
-      - "8080:8080"
-
-    networks:
-      - selenium-grid
 
 volumes:
   shared-data:

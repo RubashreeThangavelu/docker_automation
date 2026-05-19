@@ -1,7 +1,7 @@
 version: "3.9"
 
 x-common-volumes: &common-volumes
-  - ./reports:/app/reports
+  - ./reports:/reports
   - shared-data:/data
   - ./Docker_backup:/usr/local/tomcat/webapps/Docker_backup
 

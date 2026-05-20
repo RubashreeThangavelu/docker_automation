@@ -58,7 +58,7 @@ public class BackupStatusTest extends BaseTest {
         
          baseUrl = ConfigReader.getProperty("base.url");
 
-        driver.get(baseUrl + "/index.jsp");
+        driver.get(baseUrl + "index.jsp");
 
 
         statusPage = new BackupStatusPage(driver);
@@ -545,7 +545,7 @@ public void verifyLastFileNameValidation() throws Exception {
     public void verifyCountdownReachesZeroAndNextRunUpdates() throws Exception {
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-            driver.get(baseUrl + "/backup.jsp");
+            driver.get(baseUrl + "backup.jsp");
 
             String sourcePath = ConfigReader.getProperty("backup.example.source.path");
              String destPath =ConfigReader.getProperty("backup.destination.path");
@@ -735,7 +735,7 @@ public void verifyCountdownDoesNotFreezeOrSkip() throws Exception {
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 
-        driver.get(baseUrl + "/backup.jsp");
+        driver.get(baseUrl + "backup.jsp");
         
             String sourcePath = ConfigReader.getProperty("backup.example.source.path");
              String destPath =ConfigReader.getProperty("backup.destination.path");
@@ -803,7 +803,7 @@ public void verifyCountdownDoesNotFreezeOrSkip() throws Exception {
 public void verifyNextScheduledRunCalculatedCorrectly() throws Exception {
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-            driver.get(baseUrl + "/backup.jsp");
+            driver.get(baseUrl + "backup.jsp");
             
               String sourcePath= ConfigReader.getProperty("backup.source.path");
              String destPath =ConfigReader.getProperty("backup.destination.path");
@@ -880,7 +880,7 @@ public void verifyNextScheduledRunCalculatedCorrectly() throws Exception {
 
     Path longFilePath = sourceDir.resolve(longFileName);
     Files.writeString(longFilePath, "dummy content");
-            driver.get(baseUrl + "/backup.jsp");
+            driver.get(baseUrl + "backup.jsp");
 
 
 
@@ -959,7 +959,7 @@ public void verifyHandlingFailedBackups() throws InterruptedException {
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
     
-            driver.get(baseUrl + "/backup.jsp");
+            driver.get(baseUrl + "backup.jsp");
             
                     String sourcePath= ConfigReader.getProperty("backup.temp1.source.path");
              String destPath =ConfigReader.getProperty("backup.destination.path");
@@ -1062,7 +1062,7 @@ public void verifyScheduledTimeCorrectlyDisplayed() throws Exception {
 
     try {
 
-        driver.get(baseUrl + "/backup.jsp");
+        driver.get(baseUrl + "backup.jsp");
 
         String sourcePath =
                 ConfigReader.getProperty("backup.example.source.path");
@@ -1248,7 +1248,7 @@ public void verifyScheduledTimeCorrectlyDisplayed() throws Exception {
         destDir.mkdirs();
     }
 
-    driver.get(baseUrl + "/backup.jsp");
+    driver.get(baseUrl + "backup.jsp");
 
     driver.findElement(By.name("sourceDir")).sendKeys(SOURCE_DIR);
     driver.findElement(By.name("destDir")).sendKeys(DESTINATION_DIR);
@@ -1300,7 +1300,7 @@ public void verifyScheduledTimeCorrectlyDisplayed() throws Exception {
 @Test
 public void verifyNoSensitiveDataLeakage() throws Exception {
 
-    driver.get(baseUrl + "/backup.jsp");
+    driver.get(baseUrl + "backup.jsp");
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 

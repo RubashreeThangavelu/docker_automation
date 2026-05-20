@@ -35,7 +35,7 @@ public class SignupTest extends BaseTest {
            
          baseUrl = ConfigReader.getProperty("base.url");
 
-        driver.get(baseUrl + "/signup.html");
+        driver.get(baseUrl + "signup.html");
         
 
         signupPage = new SignupPage(driver);
@@ -560,7 +560,7 @@ Assert.assertTrue(
        
         
 
-        driver.get(baseUrl + "/signup.html");
+        driver.get(baseUrl + "signup.html");
 
 
         String baseUsername = "testuser";
@@ -605,7 +605,7 @@ Assert.assertTrue(
                
 
 
-        driver.get(baseUrl + "/signup.html");
+        driver.get(baseUrl + "signup.html");
 
 
         }

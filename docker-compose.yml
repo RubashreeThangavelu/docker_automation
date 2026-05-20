@@ -2,7 +2,7 @@ services:
 
   app:
     image: tomcat:10.1
-    
+    container_name: tomcat-app
     ports:
       - "8081:8080"
     volumes:
@@ -15,7 +15,7 @@ services:
 
   firefox:
     image: selenium/standalone-firefox:4.18.1
-   
+    container_name: firefox
     shm_size: 2gb
     ports:
       - "4444:4444"
@@ -29,7 +29,6 @@ services:
       - firefox
       - app
     working_dir: /app
-
     command: >
       sh -c "set -e;
       /init-data.sh &&
@@ -38,15 +37,29 @@ services:
       mvn test &&
       mkdir -p /reports &&
       cp -r target/surefire-reports /reports/"
-
     volumes:
       - ./reports:/reports
       - shared-data:/data
     networks:
       - selenium-grid
 
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    user: root
+    privileged: true
+    networks:
+      - selenium-grid
+
 volumes:
   shared-data:
+  jenkins_home:
 
 networks:
   selenium-grid:

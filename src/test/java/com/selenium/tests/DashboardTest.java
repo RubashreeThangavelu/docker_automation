@@ -24,7 +24,7 @@ public class DashboardTest extends BaseTest {
     public void goToDashboard() {
      
         baseUrl = ConfigReader.getProperty("base.url");
-        driver.get(baseUrl + "/welcome.jsp");
+        driver.get(baseUrl + "welcome.jsp");
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
@@ -293,7 +293,7 @@ public class DashboardTest extends BaseTest {
         String dashStatusText = dashStatus.getText().replace("Status:", "").trim();
         String dashNextRunText = dashNextRun.getText().replace("Total Backups Completed:", "").trim();
 
-        driver.get(baseUrl + "/index.jsp");
+        driver.get(baseUrl + "index.jsp");
 
         WebElement statusLastFile = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//p[strong[contains(text(),'Last File:')]]")));
@@ -325,7 +325,7 @@ public class DashboardTest extends BaseTest {
     @Test
     public void verifyBackupTimeReflectsSystemClock() throws InterruptedException {
 
-        driver.get(baseUrl + "/backup.jsp");
+        driver.get(baseUrl + "backup.jsp");
 
         String sourcePath = ConfigReader.getProperty("backup.temp.source.path");
         String destPath = ConfigReader.getProperty("backup.destination.path");
@@ -366,7 +366,7 @@ public class DashboardTest extends BaseTest {
 
         Assert.assertTrue(completed);
 
-        driver.get(baseUrl + "/welcome.jsp");
+        driver.get(baseUrl + "welcome.jsp");
         driver.navigate().refresh();
 
         WebDriverWait dashWait = new WebDriverWait(driver, Duration.ofSeconds(40));

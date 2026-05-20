@@ -53,7 +53,7 @@ public class BackupSchedulerTest extends BaseTest {
         
          baseUrl = ConfigReader.getProperty("base.url");
 
-        driver.get(baseUrl + "/backup.jsp");
+        driver.get(baseUrl + "backup.jsp");
         backupPage = new BackupSchedulerPage(driver);
     }
 
@@ -2011,7 +2011,7 @@ public void verifyErrorMessagesForInvalidInput() {
             By.cssSelector("button.disable-btn")));
     disableButton.click();
     
-    driver.get(baseUrl + "/welcome.jsp");
+    driver.get(baseUrl + "welcome.jsp");
 
 
 
@@ -2136,7 +2136,7 @@ public void verifyStatusChangeOnWelcomePageAfterEnablingBackup() throws Interrup
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     
-    driver.get(baseUrl + "/backup.jsp");
+    driver.get(baseUrl + "backup.jsp");
 
     
     
@@ -2178,7 +2178,7 @@ public void verifyStatusChangeOnWelcomePageAfterEnablingBackup() throws Interrup
     );
     
     
-    driver.get(baseUrl + "/welcome.jsp");
+    driver.get(baseUrl + "welcome.jsp");
 
 
 

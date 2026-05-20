@@ -281,8 +281,7 @@ public class DashboardTest extends BaseTest {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 
-        WebElement dashLastFile = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//p[strong[contains(text(),'Files in Last Backup:')]]")));
+        WebElement dashLastFile = wait.until(ExpectedConditions.visibilityOfElementLocated( By.xpath("//p[strong[contains(text(),'Files in Last Backup:')]]/span")));
 
         WebElement dashLastRun = driver.findElement(By.xpath("//p[strong[contains(text(),'Last Backup Time:')]]/span"));
         WebElement dashStatus = driver.findElement(By.xpath("//p[strong[contains(text(),'Status:')]]/span"));

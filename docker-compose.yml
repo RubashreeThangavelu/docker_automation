@@ -36,7 +36,9 @@ services:
       sleep 20 &&
       mvn test &&
       mkdir -p /reports &&
-      cp -r target/surefire-reports /reports/"
+      cp -r target/surefire-reports /reports/
+      exec sleep infinity
+      "
     volumes:
       - ./reports:/reports
       - shared-data:/data
@@ -63,3 +65,4 @@ volumes:
 
 networks:
   selenium-grid:
+    name: selenium-grid

@@ -47,19 +47,33 @@
             </plugin>
 
             <!-- Surefire plugin for TestNG -->
-           <plugin>
+          <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
     <version>3.2.5</version>
 
     <configuration>
+
+        <!-- TestNG suite -->
         <suiteXmlFiles>
             <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
         </suiteXmlFiles>
 
-        <!-- VERY IMPORTANT for Docker + Selenium -->
+        <!-- Report location -->
+        <reportsDirectory>
+            ${project.build.directory}/surefire-reports
+        </reportsDirectory>
+
+        <!-- Important for Docker Selenium -->
         <forkCount>0</forkCount>
         <reuseForks>false</reuseForks>
+
+        <!-- Generate detailed reports -->
+        <reportFormat>plain</reportFormat>
+
+        <!-- Print test summary -->
+        <printSummary>true</printSummary>
+
     </configuration>
 </plugin>
         </plugins>

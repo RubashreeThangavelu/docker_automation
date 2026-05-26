@@ -42,13 +42,13 @@
             <class name="com.selenium.tests.LoginTest"/>
         </classes>
     </test> 
-    <!--test name="Signup">
+    <test name="Signup">
             <parameter name="newBrowser" value="true"/>
         <classes>
             <class name="com.selenium.tests.SignupTest"/>
         </classes>
     </test> 
-    <test name="BackupScheduler">
+    <!--test name="BackupScheduler">
             <parameter name="newBrowser" value="true"/>
         <classes>
             <class name="com.selenium.tests.BackupSchedulerTest"/>

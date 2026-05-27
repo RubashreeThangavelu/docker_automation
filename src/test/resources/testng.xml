@@ -36,13 +36,13 @@
                 </methods>
         </classes>
     </test> 
-    <-test name="Login">
+    <!--test name="Login">
             <parameter name="newBrowser" value="true"/>
         <classes>
             <class name="com.selenium.tests.LoginTest"/>
         </classes>
     </test> 
-    <!--test name="Signup">
+    <test name="Signup">
             <parameter name="newBrowser" value="true"/>
         <classes>
             <class name="com.selenium.tests.SignupTest"/>
